@@ -1,9 +1,14 @@
 import "@/styles/globals.css";
-import "bootstrap/dist/css/bootstrap.css";
+import "@/styles/bootstrap-zephyr.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.js");
+  }, []);
+  return (<Component {...pageProps} />)
 }
 
 export default App;

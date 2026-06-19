@@ -5,6 +5,7 @@ const Document = () => {
     <Html lang="en">
       <Head />
       <body>
+        {/* TODO: Dark mode */}
         <Main />
         <NextScript />
       </body>
