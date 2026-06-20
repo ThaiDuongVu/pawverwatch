@@ -1,0 +1,19 @@
+import NavBar from "@/components/navbar";
+import Image from "next/image";
+
+const Custom404 = () => {
+  return (
+    <div>
+      <NavBar currentPage="" />
+      <br />
+      <div className="container text-center">
+        <h1><strong>404: Fika ate this page!</strong></h1>
+        <h5>Naughty fat cat</h5>
+        <br />
+        <Image src={"/images/404-cat.png"} alt="404 cat" width={256} height={256} />
+      </div>
+    </div>
+  )
+};
+
+export default Custom404;

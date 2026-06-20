@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
+    // Bootstrap JavaScript for functionalities
     import("bootstrap/dist/js/bootstrap.bundle.js");
   }, []);
   return (<Component {...pageProps} />)

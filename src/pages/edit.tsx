@@ -1,10 +1,10 @@
 import NavBar from "@/components/navbar";
-import Header from "@/components/header";
+import DefaultHead from "@/components/default-head";
 
 const Edit = () => {
   return (
     <div>
-      <Header />
+      <DefaultHead />
       <NavBar currentPage="edit" />
     </div>
   )
