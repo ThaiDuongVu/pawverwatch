@@ -1,18 +1,34 @@
-const NavBar = () => {
+import Link from "next/link";
+
+type NavBarProps = {
+  currentPage: string;
+}
+
+const NavBar = ({ currentPage }: NavBarProps) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand mb-0 h1" href="#">Pawverwatch</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <Link className="navbar-brand mb-0 h1" href="/">Pawverwatch</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse" id="navbarContent">
+          {/* Right-alighed items */}
+          <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link active" href="">Home</a>
+              <Link className={`nav-link ${currentPage == "home" ? "active" : ""}`} href="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="">Edit</a>
+              <Link className={`nav-link ${currentPage == "edit" ? "active" : ""}`} href="/edit">Edit</Link>
+            </li>
+          </ul>
+          {/* Left-aligned items */}
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" href="/profile"><i className="h4 bi bi-person-circle"></i></Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/settings"><i className="h4 bi bi-gear-fill"></i></Link>
             </li>
           </ul>
         </div>

@@ -1,13 +1,13 @@
 import NavBar from "@/components/navbar";
 import Header from "@/components/header";
 
-const Home = () => {
+const Edit = () => {
   return (
     <div>
       <Header />
-      <NavBar currentPage="home" />
+      <NavBar currentPage="edit" />
     </div>
-  );
-}
+  )
+};
 
-export default Home;
+export default Edit;
