@@ -12,7 +12,7 @@ const Home = () => {
   const examplesLoaded = useRef(false);
   useEffect(() => {
     // Only run on first mount or on remount
-    if (!examplesLoaded.current || process.env.NODE_ENV !== "development") {
+    if (!examplesLoaded.current) {
       const exampleCount = 4;
       const minExampleIndex = 1;
       const maxExampleIndex = 44;
