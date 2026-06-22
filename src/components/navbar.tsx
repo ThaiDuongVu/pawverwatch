@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Title from "./title";
 
 type NavBarProps = {
   currentPage: string;
@@ -9,7 +10,7 @@ const NavBar = ({ currentPage }: NavBarProps) => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         {/* Brand */}
-        <Link className="navbar-brand mb-0 h1" href="/">Pawverwatch</Link>
+        <Link className="navbar-brand mb-0 h1" href="/"><Title /></Link>
         {/* Toggle button for mobile interface */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -27,7 +28,7 @@ const NavBar = ({ currentPage }: NavBarProps) => {
           {/* Left-aligned items */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" href="/profile"><i className="h4 bi bi-person-circle"></i></Link>
+              <Link className="nav-link" href="/profile"><i className="h4 bi bi-heart-fill"></i></Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/settings"><i className="h4 bi bi-gear-fill"></i></Link>
