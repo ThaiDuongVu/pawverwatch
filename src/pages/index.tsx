@@ -38,7 +38,7 @@ const Home = () => {
               exampleIndices.map((index) => {
                 return (
                   <div className="col" key={`example${index}`}>
-                    <Image className="img-fluid rounded border bg-body-secondary" src={`/images/examples/${index}.png`} alt={`Example ${index}`} width={200} height={0} />
+                    <Image className="img-fluid rounded border bg-body-secondary" src={`/images/examples/${index}.png`} alt={`Example ${index}`} width={200} height={0} placeholder="blur" blurDataURL="automatic"/>
                   </div>
                 )
               })
