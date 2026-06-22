@@ -8,7 +8,8 @@ import { useEffect } from "react";
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     // Bootstrap JavaScript for functionalities
-    import("bootstrap/dist/js/bootstrap.bundle.js");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require("bootstrap/dist/js/bootstrap.bundle.js");
   }, []);
   return (<Component {...pageProps} />)
 }
