@@ -19,19 +19,19 @@ const NavBar = ({ currentPage }: NavBarProps) => {
           {/* Right-alighed items */}
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link className={`nav-link ${currentPage == "home" ? "active" : ""}`} href="/">Home</Link>
+              <Link className={`nav-link ${currentPage == "home" ? "active" : ""}`} href="/">Home <i className="bi bi-house-fill"></i></Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${currentPage == "edit" ? "active" : ""}`} href="/edit">Edit</Link>
+              <Link className={`nav-link ${currentPage == "edit" ? "active" : ""}`} href="/edit">Edit <i className="bi bi-pencil-fill"></i></Link>
             </li>
           </ul>
           {/* Left-aligned items */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" href="/favorites"><i className="h4 bi bi-heart-fill"></i></Link>
+              <Link className="nav-link" href="/favorites"><i className="h5 bi bi-heart-fill"></i></Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/settings"><i className="h4 bi bi-gear-fill"></i></Link>
+              <Link className="nav-link" href="/settings"><i className="h5 bi bi-gear-fill"></i></Link>
             </li>
           </ul>
         </div>

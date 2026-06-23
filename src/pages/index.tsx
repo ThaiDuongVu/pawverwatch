@@ -26,6 +26,7 @@ const Home = () => {
       <DefaultHead />
       <NavBar currentPage="home" />
       <br />
+
       <div className="container text-center">
         <Header />
         <hr />
@@ -38,7 +39,7 @@ const Home = () => {
               exampleIndices.map((index) => {
                 return (
                   <div className="col" key={`example${index}`}>
-                    <Image className="img-fluid rounded border bg-body-secondary" src={`/images/examples/${index}.png`} alt={`Example ${index}`} width={200} height={0} placeholder="blur" blurDataURL="automatic"/>
+                    <Image className="img-fluid rounded border bg-body-secondary" src={`/images/examples/${index}.png`} alt={`Example ${index}`} width={200} height={0} placeholder="blur" blurDataURL="automatic" />
                   </div>
                 )
               })
@@ -49,7 +50,7 @@ const Home = () => {
         <hr />
 
         <p>I&apos;ve seen enough, let&apos;s
-          <span><Link type="button" className="btn btn-primary ms-2" href="/edit">Edit</Link></span>
+          <span><Link type="button" className="btn btn-primary ms-2" href="/edit">Edit <i className="bi bi-pencil-fill ms-2"></i></Link></span>
         </p>
       </div>
     </div>
