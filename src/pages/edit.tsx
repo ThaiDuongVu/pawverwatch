@@ -1,14 +1,16 @@
 import { SyntheticEvent, useState } from "react";
 import Image from "next/image";
+import { removeBackground } from "@imgly/background-removal";
 import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
 import CustomModal from "@/components/custom-modal";
 
 const Edit = () => {
   const [editState, setEditState] = useState("upload");
-  // upload
-  // remove-bg
-  // configure
+  // Edit process:
+  // 1. upload
+  // 2. remove-bg
+  // 3. configure
 
   //#region Base image upload
 
@@ -63,15 +65,29 @@ const Edit = () => {
 
   //#endregion
 
+  //#region Remove image background
+
+  const removeBGDisplay = () => {
+    console.log("test");
+    removeBackground(baseImageURL).then((blob: Blob) => {
+      console.log("test2");
+      const url = URL.createObjectURL(blob);
+      console.log(url);
+    });
+    return (
+      <div></div>
+    )
+  };
+
+  //#endregion
+
   const editDisplay = () => {
     switch (editState) {
       case "upload":
-        return (
-          uploadDisplay()
-        );
+        return uploadDisplay();
 
       case "remove-bg":
-        return (<div></div>);
+        return removeBGDisplay();
 
       case "configure":
         return (<div></div>);
