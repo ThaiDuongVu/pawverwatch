@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
 import Image from "next/image";
 
 const Edit = () => {
+  const [editState, setEditState] = useState("upload");
+  // upload
+  // remove-bg
+  // configure
 
   //#region Base image upload
 
@@ -12,25 +16,50 @@ const Edit = () => {
 
   const uploadForm = () => {
     return (
-      <form className="w-75 mx-auto" id="upload-form" onSubmit={uploadOnSubmit}>
-        <h5 className="text-center">Upload a base pet image</h5>
-        <input className="form-control" type="file" accept="image/*" id="imageInput" name="imageInput"></input>
-        <label htmlFor="imageInput" className="form-label text-body-secondary">Choose an image</label>
+      <form className="w-75 mx-auto" id="upload-form">
+        <h5 className="text-center">Upload a base pet photo</h5>
+        <input className="form-control" type="file" accept="image/*" id="imageInput" name="imageInput" onChange={onBaseImageChange}></input>
+        <label htmlFor="imageInput" className="form-label text-body-secondary">Choose the photo you want to edit</label>
         <br />
-        <button type="submit" className="btn btn-primary">Upload <i className="bi bi-file-arrow-up-fill ms-1"></i></button>
       </form>
     )
   };
 
-  const uploadOnSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const file: File = event.target.imageInput.files[0];
-    if (!file) return;
+  const onBaseImageChange = (event: SyntheticEvent) => {
+    const files = (event.target as HTMLInputElement).files;
+    if (!files) return;
+    const file = files![0];
     setBaseImageFile(file);
-    setBaseImageURL(URL.createObjectURL(baseImageFile ?? file));
-  };
+    setBaseImageURL(URL.createObjectURL(file));
+  }
 
   //#endregion
+
+  const editDisplay = () => {
+    switch (editState) {
+      case "upload":
+        return (
+          <div className="container">
+            {uploadForm()}
+            <hr />
+            <div className="text-center">
+              <Image className="img-fluid rounded" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+              <br />
+              <button type="button" className="btn btn-primary m-2">Start editing! <i className="bi bi-pencil-fill ms-2"></i></button>
+            </div>
+          </div>
+        );
+
+      case "remove-bg":
+        return (<div></div>);
+
+      case "configure":
+        return (<div></div>);
+
+      default:
+        return <></>;
+    }
+  };
 
   return (
     <div>
@@ -38,16 +67,7 @@ const Edit = () => {
       <NavBar currentPage="edit" />
       <br />
 
-      <div className="container">
-        {uploadForm()}
-        <hr />
-        <div className="text-center">
-          <Image className="img-fluid rounded" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
-          <br />
-          <br />
-          <button type="button" className="btn btn-primary">Start editing! <i className="bi bi-pencil-fill ms-2"></i></button>
-        </div>
-      </div>
+      {editDisplay()}
     </div>
   )
 };
