@@ -4,7 +4,7 @@ const Document = () => {
   return (
     <Html lang="en" data-scroll-behavior="smooth">
       <Head />
-      <body>
+      <body data-bs-theme="light">
         {/* TODO: Dark mode */}
         <Main />
         <NextScript />

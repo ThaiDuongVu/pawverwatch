@@ -32,7 +32,6 @@ const Home = () => {
         <hr />
 
         <h5>Here are some examples:</h5>
-        <br />
         <div>
           <div className="row">
             {
@@ -46,11 +45,10 @@ const Home = () => {
             }
           </div>
         </div>
-        <br />
         <hr />
 
         <p>I&apos;ve seen enough, let&apos;s
-          <span><Link type="button" className="btn btn-primary ms-2" href="/edit">Edit <i className="bi bi-pencil-fill ms-2"></i></Link></span>
+          <span><Link type="button" className="btn btn-warning ms-2" href="/edit">Edit <i className="bi bi-pencil-fill ms-1"></i></Link></span>
         </p>
       </div>
     </div>

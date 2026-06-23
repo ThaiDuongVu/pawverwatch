@@ -1,7 +1,8 @@
 import { SyntheticEvent, useState } from "react";
+import Image from "next/image";
 import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
-import Image from "next/image";
+import CustomModal from "@/components/custom-modal";
 
 const Edit = () => {
   const [editState, setEditState] = useState("upload");
@@ -12,16 +13,43 @@ const Edit = () => {
   //#region Base image upload
 
   const [baseImageFile, setBaseImageFile] = useState<File | null>(null);
-  const [baseImageURL, setBaseImageURL] = useState("https://placehold.co/200x300.png?text=Super+cool+cat");
+  const [baseImageURL, setBaseImageURL] = useState("/images/placeholder2.png");
 
-  const uploadForm = () => {
+  const uploadDisplay = () => {
     return (
-      <form className="w-75 mx-auto" id="upload-form">
-        <h5 className="text-center">Upload a base pet photo</h5>
-        <input className="form-control" type="file" accept="image/*" id="imageInput" name="imageInput" onChange={onBaseImageChange}></input>
-        <label htmlFor="imageInput" className="form-label text-body-secondary">Choose the photo you want to edit</label>
-        <br />
-      </form>
+      <div className="container">
+        <h5 className="text-center"><strong>Upload a base pet photo</strong></h5>
+        {/* Upload form */}
+        <form className="w-75 mx-auto" id="upload-form">
+          <input className="form-control" type="file" accept="image/*" id="imageInput" name="imageInput" onChange={onBaseImageChange}></input>
+          <label htmlFor="imageInput" className="form-label text-body-secondary">Choose the photo you want to edit</label>
+          <br />
+        </form>
+        <hr />
+        {/* Preview */}
+        <div className="text-center">
+          <Image className="img-fluid rounded" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+          <br />
+          {
+            baseImageFile
+              ?
+              <button
+                type="button"
+                className="btn btn-warning m-2"
+                onClick={
+                  () => {
+                    if (!baseImageFile) return;
+                    setEditState("remove-bg");
+                  }
+                }>
+                Start editing! <i className="bi bi-pencil-fill ms-1"></i>
+              </button>
+              :
+              <button type="button" className="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#uploadErrorModal">Start editing! <i className="bi bi-pencil-fill ms-1"></i></button>
+          }
+          <CustomModal name="uploadErrorModal" title="No photo uploaded" content={<p>Upload a base pet photo to start editing</p>} />
+        </div>
+      </div>
     )
   };
 
@@ -39,15 +67,7 @@ const Edit = () => {
     switch (editState) {
       case "upload":
         return (
-          <div className="container">
-            {uploadForm()}
-            <hr />
-            <div className="text-center">
-              <Image className="img-fluid rounded" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
-              <br />
-              <button type="button" className="btn btn-primary m-2">Start editing! <i className="bi bi-pencil-fill ms-2"></i></button>
-            </div>
-          </div>
+          uploadDisplay()
         );
 
       case "remove-bg":
