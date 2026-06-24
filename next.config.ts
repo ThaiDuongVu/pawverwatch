@@ -8,8 +8,16 @@ const nextConfig: NextConfig = {
 
 module.exports = {
   allowedDevOrigins: ["10.0.0.167"],
-  images: {
-    remotePatterns: [new URL("https://placehold.co/200x300.png?text=Super+cool+cat")],
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
+        ],
+      },
+    ];
   },
 }
 

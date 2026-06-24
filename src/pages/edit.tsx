@@ -1,9 +1,9 @@
 import { SyntheticEvent, useState } from "react";
 import Image from "next/image";
-import { removeBackground } from "@imgly/background-removal";
 import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
 import CustomModal from "@/components/custom-modal";
+import { initializeModel, removeBackground } from "@/background-remover";
 
 const Edit = () => {
   const [editState, setEditState] = useState("upload");
@@ -16,6 +16,7 @@ const Edit = () => {
 
   const [baseImageFile, setBaseImageFile] = useState<File | null>(null);
   const [baseImageURL, setBaseImageURL] = useState("/images/placeholder2.png");
+  const [bgRemovedImageUrl, setBgRemovedImageUrl] = useState("/images/bg-removed-placeholder.png");
 
   const uploadDisplay = () => {
     return (
@@ -61,21 +62,38 @@ const Edit = () => {
     const file = files![0];
     setBaseImageFile(file);
     setBaseImageURL(URL.createObjectURL(file));
+    setBgRemovedImageUrl(URL.createObjectURL(file));
   }
 
   //#endregion
 
   //#region Remove image background
 
-  const removeBGDisplay = () => {
-    console.log("test");
-    removeBackground(baseImageURL).then((blob: Blob) => {
-      console.log("test2");
-      const url = URL.createObjectURL(blob);
-      console.log(url);
+  const removeBG  = async () => {
+    setBgRemovedImageUrl("/images/processing-placeholder.png");
+    await initializeModel();
+    removeBackground(baseImageFile).then((img) => {
+      const src = URL.createObjectURL(img);
+      setBgRemovedImageUrl(src);
     });
+  };
+
+  const removeBGDisplay = () => {
     return (
-      <div></div>
+      <div className="container">
+        <div className="text-center">
+          <h5 className="text-center"><strong>Remove background?</strong></h5>
+          <p>
+            Would you like to remove the image background before editing?
+            <br />
+            Don&apos;t worry we&apos;ll handle it automatically.
+          </p>
+          <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG Removed" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+          <br />
+          <button type="button" className="btn btn-secondary m-2" onClick={removeBG}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
+          <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
+        </div>
+      </div>
     )
   };
 
