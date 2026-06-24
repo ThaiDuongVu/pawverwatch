@@ -16,7 +16,8 @@ const Edit = () => {
 
   const [baseImageFile, setBaseImageFile] = useState<File | null>(null);
   const [baseImageURL, setBaseImageURL] = useState("/images/placeholder2.png");
-  const [bgRemovedImageUrl, setBgRemovedImageUrl] = useState("/images/bg-removed-placeholder.png");
+  const [bgRemovedImageUrl, setBgRemovedImageUrl] = useState("/images/placeholder2.png");
+  const [bgRemovalDone, setBgRemovalDone] = useState(false);
 
   const uploadDisplay = () => {
     return (
@@ -69,30 +70,52 @@ const Edit = () => {
 
   //#region Remove image background
 
-  const removeBG  = async () => {
+  const removeBG = async () => {
     setBgRemovedImageUrl("/images/processing-placeholder.png");
     await initializeModel();
     removeBackground(baseImageFile).then((img) => {
       const src = URL.createObjectURL(img);
       setBgRemovedImageUrl(src);
+      setBgRemovalDone(true);
     });
   };
 
   const removeBGDisplay = () => {
     return (
       <div className="container">
-        <div className="text-center">
-          <h5 className="text-center"><strong>Remove background?</strong></h5>
-          <p>
-            Would you like to remove the image background before editing?
-            <br />
-            Don&apos;t worry we&apos;ll handle it automatically.
-          </p>
-          <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG Removed" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
-          <br />
-          <button type="button" className="btn btn-secondary m-2" onClick={removeBG}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
-          <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
-        </div>
+        {
+          bgRemovalDone
+            ?
+            <div className="text-center">
+              <h5><strong>Use this?</strong></h5>
+              <p>Choose which photo to edit</p>
+              <div className="row">
+                <div className="col text-end">
+                  <Image className="img-fluid rounded" src={baseImageURL} alt="Original photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+                  <br />
+                  <button type="button" className="btn btn-secondary m-2">The OG <i className="bi bi-hand-index-fill ms-1"></i></button>
+                </div>
+                <div className="col text-start">
+                  <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+                  <br />
+                  <button type="button" className="btn btn-warning m-2">No background <i className="bi bi-hand-index-fill ms-1"></i></button>
+                </div>
+              </div>
+            </div>
+            :
+            <div className="text-center">
+              <h5><strong>Remove background?</strong></h5>
+              <p>
+                Would you like to remove the background from the photo before editing?
+                <br />
+                Don&apos;t worry we&apos;ll handle it automatically.
+              </p>
+              <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+              <br />
+              <button type="button" className="btn btn-secondary m-2">Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
+              <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
+            </div>
+        }
       </div>
     )
   };
