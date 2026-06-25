@@ -1,5 +1,5 @@
 const Title = () => {
-  return <strong>Pawver<span className="title">watch</span></strong>
+  return <strong><span className="title-grey">Pawver</span><span className="title-orange">watch</span></strong>
 };
 
 export default Title;

@@ -16,8 +16,23 @@ const Edit = () => {
 
   const [baseImageFile, setBaseImageFile] = useState<File | null>(null);
   const [baseImageURL, setBaseImageURL] = useState("/images/placeholder2.png");
-  const [bgRemovedImageUrl, setBgRemovedImageUrl] = useState("/images/placeholder2.png");
+  const [bgRemovedImageURL, setBgRemovedImageURL] = useState("/images/placeholder2.png");
+  const [finalImageURL, setFinalImageURL] = useState("/images/placeholder2.png");
   const [bgRemovalDone, setBgRemovalDone] = useState(false);
+
+  const goToRemoveBG = () => {
+    if (!baseImageFile) return;
+    setEditState("remove-bg");
+  };
+
+  const onBaseImageChange = (event: SyntheticEvent) => {
+    const files = (event.target as HTMLInputElement).files;
+    if (!files) return;
+    const file = files![0];
+    setBaseImageFile(file);
+    setBaseImageURL(URL.createObjectURL(file));
+    setBgRemovedImageURL(URL.createObjectURL(file));
+  }
 
   const uploadDisplay = () => {
     return (
@@ -37,17 +52,7 @@ const Edit = () => {
           {
             baseImageFile
               ?
-              <button
-                type="button"
-                className="btn btn-warning m-2"
-                onClick={
-                  () => {
-                    if (!baseImageFile) return;
-                    setEditState("remove-bg");
-                  }
-                }>
-                Start editing! <i className="bi bi-pencil-fill ms-1"></i>
-              </button>
+              <button type="button" className="btn btn-warning m-2" onClick={goToRemoveBG}>Start editing! <i className="bi bi-pencil-fill ms-1"></i></button>
               :
               <button type="button" className="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#uploadErrorModal">Start editing! <i className="bi bi-pencil-fill ms-1"></i></button>
           }
@@ -57,27 +62,23 @@ const Edit = () => {
     )
   };
 
-  const onBaseImageChange = (event: SyntheticEvent) => {
-    const files = (event.target as HTMLInputElement).files;
-    if (!files) return;
-    const file = files![0];
-    setBaseImageFile(file);
-    setBaseImageURL(URL.createObjectURL(file));
-    setBgRemovedImageUrl(URL.createObjectURL(file));
-  }
-
   //#endregion
 
   //#region Remove image background
 
   const removeBG = async () => {
-    setBgRemovedImageUrl("/images/processing-placeholder.png");
+    setBgRemovedImageURL("/images/processing-placeholder.png");
     await initializeModel();
     removeBackground(baseImageFile).then((img) => {
       const src = URL.createObjectURL(img);
-      setBgRemovedImageUrl(src);
+      setBgRemovedImageURL(src);
       setBgRemovalDone(true);
     });
+  };
+
+  const goToConfigure = (noBackground = false) => {
+    setFinalImageURL(noBackground ? bgRemovedImageURL : baseImageURL);
+    setEditState("configure");
   };
 
   const removeBGDisplay = () => {
@@ -86,6 +87,7 @@ const Edit = () => {
         {
           bgRemovalDone
             ?
+            // Which photo prompt
             <div className="text-center">
               <h5><strong>Use this?</strong></h5>
               <p>Choose which photo to edit</p>
@@ -93,16 +95,17 @@ const Edit = () => {
                 <div className="col text-end">
                   <Image className="img-fluid rounded" src={baseImageURL} alt="Original photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
                   <br />
-                  <button type="button" className="btn btn-secondary m-2">The OG <i className="bi bi-hand-index-fill ms-1"></i></button>
+                  <button type="button" className="btn btn-secondary m-2" onClick={() => { goToConfigure() }}>The OG <i className="bi bi-hand-index-fill ms-1"></i></button>
                 </div>
                 <div className="col text-start">
-                  <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+                  <Image className="img-fluid rounded" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
                   <br />
-                  <button type="button" className="btn btn-warning m-2">No background <i className="bi bi-hand-index-fill ms-1"></i></button>
+                  <button type="button" className="btn btn-warning m-2" onClick={() => { goToConfigure(true) }}><i className="bi bi-hand-index-fill me-1"></i> No background</button>
                 </div>
               </div>
             </div>
             :
+            // Remove background prompt
             <div className="text-center">
               <h5><strong>Remove background?</strong></h5>
               <p>
@@ -110,12 +113,26 @@ const Edit = () => {
                 <br />
                 Don&apos;t worry we&apos;ll handle it automatically.
               </p>
-              <Image className="img-fluid rounded" src={bgRemovedImageUrl} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+              <Image className="img-fluid rounded" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
               <br />
-              <button type="button" className="btn btn-secondary m-2">Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
+              <button type="button" className="btn btn-secondary m-2" onClick={() => { goToConfigure() }}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
               <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
             </div>
         }
+      </div>
+    )
+  };
+
+  //#endregion
+
+  //#region Configure the final image
+
+  const configureDisplay = () => {
+    return (
+      <div className="container">
+        <div className="text-center">
+          <Image className="img-fluid rounded" src={finalImageURL} alt="Final photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+        </div>
       </div>
     )
   };
@@ -131,7 +148,7 @@ const Edit = () => {
         return removeBGDisplay();
 
       case "configure":
-        return (<div></div>);
+        return configureDisplay();
 
       default:
         return <></>;
