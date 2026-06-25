@@ -12,3 +12,13 @@ export const randomIntArray = (length: number, min: number, max: number) => {
   }
   return Array.from(uniqueNumbers);
 };
+
+// Download image from a URI
+export const downloadURI = (uri: string, name: string) => {
+  const link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}

@@ -29,7 +29,7 @@ const NavBar = ({ currentPage }: NavBarProps) => {
           {/* Left-aligned items */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className={`nav-link ${currentPage == "favorites" ? "active" : ""}`} href="/favorites"><i className="h5 bi bi-heart-fill"></i></Link>
+              <Link className={`nav-link ${currentPage == "favorites" ? "active" : ""}`} href="/favorites"><i className="h5 bi bi-heart-fill text-danger"></i></Link>
             </li>
             <li className="nav-item">
               <Link className={`nav-link ${currentPage == "settings" ? "active" : ""}`} href="/settings"><i className="h5 bi bi-gear-fill"></i></Link>
