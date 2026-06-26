@@ -28,7 +28,8 @@ const Edit = () => {
   const onBaseImageChange = (event: SyntheticEvent) => {
     const files = (event.target as HTMLInputElement).files;
     if (!files) return;
-    const file = files![0];
+    const file = files[0];
+    if (!file) return;
     setBaseImageFile(file);
     setBaseImageURL(URL.createObjectURL(file));
     setBgRemovedImageURL(URL.createObjectURL(file));

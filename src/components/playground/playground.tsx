@@ -18,6 +18,9 @@ interface ImageProp {
 
 const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const stageRef = useRef<Stage>(null);
+  const containerRef = useRef(null);
+
+  // Handle image exporting/downloading
   const handleExport = () => {
     if (!stageRef.current) return;
     const uri = stageRef.current.toDataURL();
@@ -26,7 +29,6 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const [exportName, setExportName] = useState("paw");
 
   // Handle stage size
-  const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   useEffect(() => {
     if (!containerRef.current) return;
@@ -43,8 +45,9 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     return () => resizeObserver.disconnect();
   }, []);
 
-  // Handle item selection
+  // Image array
   const initImages: ImageProp[] = [
+    // Always start with the base image
     {
       src: baseImageURL,
       x: 0,
@@ -53,12 +56,23 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     },
     {
       src: "/images/404-cat.png",
-      x: 200,
-      y: 200,
+      x: 0,
+      y: 0,
       id: "cat"
     }
   ];
   const [images, setImages] = useState(initImages);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const addImage = (image: ImageProp) => {
+    setImages([...images, image]);
+  }
+  const deleteImage = (id: string | null) => {
+    // Do not delete base image
+    if (!id || id === "baseImage") return;
+    setImages(images.filter(img => img.id != id));
+  }
+
+  // Handle item selection
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const checkDeselect = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
     // Deselect when clicked on empty area
@@ -70,44 +84,51 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     <div>
       {/* Main edit display */}
       <div className="row vh-75">
-        <div className="col-1"></div>
-        <div className="col-8 border border-warning border-4 rounded" ref={containerRef}>
+        <div className="col-1 text-center h-100 overflow-auto">
+
+        </div>
+        <div className="col-8 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
           <KonvaStage ref={stageRef} width={dimensions.width} height={dimensions.height} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
             <KonvaLayer>
               {
                 // Draw all images in array
                 images.map((img, index) => {
-                  return (
-                    <ImageItem
-                      key={index}
-                      src={img.src}
-                      alt="Image"
-                      imgProps={img}
-                      isSelected={selectedId === img.id}
-                      onSelect={() => { setSelectedId(img.id) }}
-                      onChange={(newImg: HTMLImageElement) => {
-                        const imgs = images.slice();
-                        imgs[index] = newImg;
-                        setImages(imgs);
-                      }}
-                    />
-                  );
+                  return <ImageItem
+                    key={index}
+                    src={img.src}
+                    alt="Image"
+                    imgProps={img}
+                    isSelected={selectedId === img.id}
+                    onSelect={() => { setSelectedId(img.id) }}
+                    onChange={(newImg: HTMLImageElement) => {
+                      const imgs = images.slice();
+                      imgs[index] = newImg;
+                      setImages(imgs);
+                    }} />
                 })
               }
             </KonvaLayer>
           </KonvaStage>
         </div>
-        <div className="col-3">
-          {/* Tertiary elements */}
-          <form className="w-75 mx-auto">
-            <label htmlFor="imgNameInput" className="form-label"><strong>Name</strong></label>
-            <input type="text" className="form-control" id="imgNameInput" aria-describedby="imgNameHelp" value={exportName} onChange={(event) => {setExportName(event.target.value)}}/>
-            <div id="imgNameHelp" className="form-text">Name your edit before saving</div>
-            <hr />
-
+        <div className="col-3 h-100 overflow-auto">
+          {/* Side buttons */}
+          {/* Operations */}
+          <div className="w-75 mx-auto">
+            <p><strong>Operations</strong></p>
             <div className="text-center">
-              <button type="button" className="btn btn-danger me-1">Save <i className="bi bi-heart-fill ms-1"></i></button>
-              <button type="button" className="btn btn-warning ms-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
+              <button type="button" className="btn btn-danger m-1" onClick={() => {deleteImage(selectedId)}}>Delete <i className="bi bi-trash-fill ms-1"></i></button>
+              <button type="button" className="btn btn-info m-1">Duplicate <i className="bi bi-copy ms-1"></i></button>
+            </div>
+            <hr />
+          </div>
+          {/* Exporting */}
+          <form className="w-75 mx-auto">
+            <label htmlFor="imgNameInput" className="form-label"><strong>Exporting</strong></label>
+            <input type="text" className="form-control" id="imgNameInput" aria-describedby="imgNameHelp" value={exportName} onChange={(event) => { setExportName(event.target.value) }} />
+            <div id="imgNameHelp" className="form-text">Name your edit before saving</div>
+            <div className="text-center">
+              <button type="button" className="btn btn-primary m-1" >Save <i className="bi bi-bookmark-fill ms-1"></i></button>
+              <button type="button" className="btn btn-warning m-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
             </div>
           </form>
         </div>

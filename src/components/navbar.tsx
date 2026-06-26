@@ -17,7 +17,7 @@ const NavBar = ({ currentPage }: NavBarProps) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarContent">
-          {/* Right-alighed items */}
+          {/* Left-alighed items */}
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <Link className={`nav-link ${currentPage == "home" ? "active" : ""}`} href="/">Home <i className="bi bi-house-fill"></i></Link>
@@ -25,11 +25,14 @@ const NavBar = ({ currentPage }: NavBarProps) => {
             <li className="nav-item">
               <Link className={`nav-link ${currentPage == "edit" ? "active" : ""}`} href="/edit">Edit <i className="bi bi-pencil-fill"></i></Link>
             </li>
+            <li className="nav-item">
+              <Link className={`nav-link ${currentPage == "demo" ? "active" : ""}`} href="/demo">Demo <i className="bi bi-play-btn-fill"></i></Link>
+            </li>
           </ul>
-          {/* Left-aligned items */}
+          {/* Right-aligned items */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className={`nav-link ${currentPage == "favorites" ? "active" : ""}`} href="/favorites"><i className="h5 bi bi-heart-fill text-danger"></i></Link>
+              <Link className={`nav-link ${currentPage == "favorites" ? "active" : ""}`} href="/favorites"><i className="h5 bi bi-bookmark-fill"></i></Link>
             </li>
             <li className="nav-item">
               <Link className={`nav-link ${currentPage == "settings" ? "active" : ""}`} href="/settings"><i className="h5 bi bi-gear-fill"></i></Link>
