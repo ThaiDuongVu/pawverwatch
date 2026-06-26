@@ -68,7 +68,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   }
   const deleteImage = (id: string | null) => {
     // Do not delete base image
-    if (!id || id === "baseImage") return;
+    if (!id || id === "baseImg") return;
     setImages(images.filter(img => img.id != id));
   }
 
