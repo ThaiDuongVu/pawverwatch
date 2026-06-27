@@ -4,10 +4,17 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Image as KonvaImage, Transformer as KonvaTransformer } from "react-konva";
 import useImage from "use-image";
 
+export interface ImageProp {
+  src: string,
+  x: number,
+  y: number,
+  id: string
+}
+
 interface ImageItemProps {
   src: string,
   alt?: string | "",
-  imgProps: object,
+  imgProps: ImageProp,
   isSelected: boolean,
   onSelect: () => void,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,16 +29,16 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
   // Set initial size to either match canvas width or height
   const [initSize, setInitSize] = useState({ width: 0, height: 0 });
   useEffect(() => {
-    if (image && imageStatus === "loaded") {
-      const canvasSize = imgRef.current?.getParent()?.getSize();
-      if (!canvasSize) return;
-      const aspectRatio = image.width / image.height;
-      if (image.width < image.height)
-        setInitSize({ width: canvasSize.height * aspectRatio, height: canvasSize.height });
-      else
-        setInitSize({ width: canvasSize.width, height: canvasSize.width * (1 / aspectRatio) });
-    }
-  }, [image, imageStatus]);
+    if (imgProps.id !== "baseImg" || !image || imageStatus !== "loaded") return;
+    const canvasSize = imgRef.current?.getParent()?.getSize();
+    if (!canvasSize) return;
+    const aspectRatio = image.width / image.height;
+    if (image.width < image.height)
+      setInitSize({ width: canvasSize.height * aspectRatio, height: canvasSize.height });
+    else
+      setInitSize({ width: canvasSize.width, height: canvasSize.width * (1 / aspectRatio) });
+
+  }, [imgProps.id, image, imageStatus]);
 
   useEffect(() => {
     if (isSelected && imgRef.current) {
@@ -67,7 +74,6 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
           if (!node) return;
           const scaleX = node.scaleX();
           const scaleY = node.scaleY();
-
           // Reset
           node.scaleX(1);
           node.scaleY(1);
@@ -75,7 +81,6 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
             ...imgProps,
             x: node.x(),
             y: node.y(),
-
             // Set minimal value
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),

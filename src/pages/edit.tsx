@@ -16,8 +16,8 @@ const Edit = () => {
   //#region Base image upload
 
   const [baseImageFile, setBaseImageFile] = useState<File | null>(null);
-  const [baseImageURL, setBaseImageURL] = useState("/images/placeholder2.png");
-  const [bgRemovedImageURL, setBgRemovedImageURL] = useState("/images/placeholder2.png");
+  const [baseImageURL, setBaseImageURL] = useState("/images/placeholder.png");
+  const [bgRemovedImageURL, setBgRemovedImageURL] = useState("/images/placeholder.png");
   const [bgRemovalDone, setBgRemovalDone] = useState(false);
 
   const goToRemoveBG = () => {

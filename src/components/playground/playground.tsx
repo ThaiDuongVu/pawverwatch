@@ -1,7 +1,8 @@
 import { Stage } from "konva/lib/Stage";
+import { Layer } from "konva/lib/Layer";
 import { Stage as KonvaStage, Layer as KonvaLayer } from "react-konva";
 import { useEffect, useState, useRef } from "react";
-import ImageItem from "./image-item";
+import ImageItem, { ImageProp } from "./image-item";
 import { KonvaEventObject } from "konva/lib/Node";
 import { downloadURI } from "@/helper";
 
@@ -9,21 +10,18 @@ interface PlaygroundProps {
   baseImageURL: string
 }
 
-interface ImageProp {
-  src: string,
-  x: number,
-  y: number,
-  id: string
-}
+
 const DEFAULT_EXPORT_NAME = "paw";
 
 const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const stageRef = useRef<Stage>(null);
+  const layerRef = useRef<Layer>(null);
   const containerRef = useRef(null);
 
   // Handle image exporting/downloading
   const handleExport = () => {
     if (!stageRef.current) return;
+    setSelectedId(null);
     const uri = stageRef.current.toDataURL();
     downloadURI(uri, `${exportName === "" ? DEFAULT_EXPORT_NAME : exportName}.png`);
   }
@@ -84,7 +82,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
         </div>
         <div className="col-8 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
           <KonvaStage ref={stageRef} width={dimensions.width} height={dimensions.height} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
-            <KonvaLayer>
+            <KonvaLayer ref={layerRef}>
               {
                 // Draw all images in array
                 images.map((img, index) => {
