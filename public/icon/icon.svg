@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
@@ -24,10 +24,10 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     showborder="false"
-     inkscape:zoom="0.19710122"
-     inkscape:cx="-78.639797"
-     inkscape:cy="788.93474"
+     showborder="true"
+     inkscape:zoom="0.125"
+     inkscape:cx="-500"
+     inkscape:cy="1652"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -59,8 +59,8 @@
        id="rect4"
        width="512"
        height="512"
-       x="-1009.9498"
-       y="-87.326492"
+       x="-2638.7786"
+       y="129.09132"
        inkscape:export-filename="overwatch2.png"
        inkscape:export-xdpi="50.799999"
        inkscape:export-ydpi="50.799999" /><g
@@ -68,7 +68,7 @@
        inkscape:export-filename="overwatch2.png"
        inkscape:export-xdpi="50.799999"
        inkscape:export-ydpi="50.799999"
-       transform="translate(-1009.9498,-87.326489)"><image
+       transform="translate(-2638.7787,129.09133)"><image
          width="512"
          height="512"
          preserveAspectRatio="none"
@@ -83,10 +83,15 @@
          rx="181.7623"
          cy="256.03653"
          cx="256.01224" /></g><g
-       id="g5"
-       inkscape:export-filename="icon2.png"
+       id="g2"
+       inkscape:export-filename="icon.png"
        inkscape:export-xdpi="50.799999"
-       inkscape:export-ydpi="50.799999"><image
+       inkscape:export-ydpi="50.799999"><circle
+         style="fill:#ffffff;stroke-width:0.581843"
+         id="path2"
+         cx="256"
+         cy="256"
+         r="256" /><image
          width="320"
          height="320"
          preserveAspectRatio="none"
