@@ -5,11 +5,16 @@ import { useEffect, useState, useRef } from "react";
 import ImageItem, { ImageProp } from "./image-item";
 import { KonvaEventObject } from "konva/lib/Node";
 import { downloadURI } from "@/helper";
+import Image from "next/image";
 
 interface PlaygroundProps {
   baseImageURL: string
 }
 
+interface HeroData {
+  name: string,
+  img: string
+}
 
 const DEFAULT_EXPORT_NAME = "paw";
 
@@ -18,7 +23,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const layerRef = useRef<Layer>(null);
   const containerRef = useRef(null);
 
-  // Handle image exporting/downloading
+  // #region Handle image exporting/downloading
+
   const handleExport = () => {
     if (!stageRef.current) return;
     setSelectedId(null);
@@ -27,7 +33,10 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   }
   const [exportName, setExportName] = useState("");
 
-  // Handle stage size
+  //#endregion
+
+  // #region Handle stage size
+
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   useEffect(() => {
     if (!containerRef.current) return;
@@ -44,7 +53,10 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     return () => resizeObserver.disconnect();
   }, []);
 
-  // Image array
+  //#endregion
+
+  // #region Handle image operations
+
   const initImages: ImageProp[] = [
     // Always start with the base image
     {
@@ -65,7 +77,10 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     setImages(images.filter(img => img.id != id));
   }
 
-  // Handle item selection
+  //#endregion
+
+  // #region Handle item selection
+
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const checkDeselect = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
     // Deselect when clicked on empty area
@@ -73,12 +88,40 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     if (clickedOnEmpty) setSelectedId(null);
   };
 
+  //#endregion
+
+  const [heroData, setHeroData] = useState<HeroData[]>([]);
+  const heroButtonsDisplay = () => {
+    fetch("/data/heroes.json")
+      .then((res) => res.json())
+      .then((data) => setHeroData(data));
+
+    return (
+      <div className="w-75 mx-auto">
+        <p><strong>Heroes</strong></p>
+        {
+          heroData.map((hero) => {
+            return (
+              <div key={hero.name}>
+                <button type="button" className="btn btn-secondary p-1 m-1" title={`${hero.name}`}>
+                  <Image className="img-fluid rounded" src={`${hero.img}`} alt={`${hero.name}`} width={75} height={75} />
+                </button>
+                <br />
+              </div>
+            );
+          })
+        }
+      </div>
+    )
+  };
+
   return (
     <div>
       {/* Main edit display */}
-      <div className="row vh-75">
+      <div className="row vh-80">
         <div className="col-1 text-center h-100 overflow-auto">
-
+          {/* Hero buttons */}
+          {heroButtonsDisplay()}
         </div>
         <div className="col-8 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
           <KonvaStage ref={stageRef} width={dimensions.width} height={dimensions.height} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
@@ -111,7 +154,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
             <div className="text-center">
               <button type="button" className="btn btn-secondary m-1">Reset <i className="bi bi-arrow-counterclockwise ms-1"></i></button>
               <button type="button" className="btn btn-secondary m-1">Duplicate <i className="bi bi-copy ms-1"></i></button>
-              <button type="button" className="btn btn-danger m-1" onClick={() => { deleteImage(selectedId) }}>Delete <i className="bi bi-trash-fill ms-1"></i></button>
+              <button type="button" className="btn btn-secondary m-1" onClick={() => { deleteImage(selectedId) }}>Delete <i className="bi bi-trash-fill text-danger ms-1"></i></button>
             </div>
             <hr />
           </div>
@@ -123,7 +166,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
             <br />
             <div className="text-center">
               <button type="button" className="btn btn-primary m-1" >Save <i className="bi bi-bookmark-fill ms-1"></i></button>
-              <button type="button" className="btn btn-warning m-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
+              <button type="button" className="btn btn-success m-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
             </div>
           </div>
         </div>
