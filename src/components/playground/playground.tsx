@@ -15,6 +15,7 @@ interface ImageProp {
   y: number,
   id: string
 }
+const DEFAULT_EXPORT_NAME = "paw";
 
 const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const stageRef = useRef<Stage>(null);
@@ -24,9 +25,9 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const handleExport = () => {
     if (!stageRef.current) return;
     const uri = stageRef.current.toDataURL();
-    downloadURI(uri, `${exportName}.png`);
+    downloadURI(uri, `${exportName === "" ? DEFAULT_EXPORT_NAME : exportName}.png`);
   }
-  const [exportName, setExportName] = useState("paw");
+  const [exportName, setExportName] = useState("");
 
   // Handle stage size
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -53,12 +54,6 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
       x: 0,
       y: 0,
       id: "baseImg"
-    },
-    {
-      src: "/images/404-cat.png",
-      x: 0,
-      y: 0,
-      id: "cat"
     }
   ];
   const [images, setImages] = useState(initImages);
@@ -114,23 +109,25 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           {/* Side buttons */}
           {/* Operations */}
           <div className="w-75 mx-auto">
-            <p><strong>Operations</strong></p>
+            <strong>Operations</strong>
             <div className="text-center">
-              <button type="button" className="btn btn-danger m-1" onClick={() => {deleteImage(selectedId)}}>Delete <i className="bi bi-trash-fill ms-1"></i></button>
-              <button type="button" className="btn btn-info m-1">Duplicate <i className="bi bi-copy ms-1"></i></button>
+              <button type="button" className="btn btn-secondary m-1">Reset <i className="bi bi-arrow-counterclockwise ms-1"></i></button>
+              <button type="button" className="btn btn-secondary m-1">Duplicate <i className="bi bi-copy ms-1"></i></button>
+              <button type="button" className="btn btn-danger m-1" onClick={() => { deleteImage(selectedId) }}>Delete <i className="bi bi-trash-fill ms-1"></i></button>
             </div>
             <hr />
           </div>
           {/* Exporting */}
-          <form className="w-75 mx-auto">
-            <label htmlFor="imgNameInput" className="form-label"><strong>Exporting</strong></label>
-            <input type="text" className="form-control" id="imgNameInput" aria-describedby="imgNameHelp" value={exportName} onChange={(event) => { setExportName(event.target.value) }} />
+          <div className="w-75 mx-auto">
+            <strong>Exporting</strong>
+            <input type="text" className="form-control" id="imgNameInput" aria-describedby="imgNameHelp" value={exportName} onChange={(event) => { setExportName(event.target.value) }} placeholder="paw" />
             <div id="imgNameHelp" className="form-text">Name your edit before saving</div>
+            <br />
             <div className="text-center">
               <button type="button" className="btn btn-primary m-1" >Save <i className="bi bi-bookmark-fill ms-1"></i></button>
               <button type="button" className="btn btn-warning m-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

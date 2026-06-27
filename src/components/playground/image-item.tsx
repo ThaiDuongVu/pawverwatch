@@ -1,6 +1,6 @@
 import { Image } from "konva/lib/shapes/Image";
 import { Transformer } from "konva/lib/shapes/Transformer";
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Image as KonvaImage, Transformer as KonvaTransformer } from "react-konva";
 import useImage from "use-image";
 
@@ -15,9 +15,23 @@ interface ImageItemProps {
 }
 
 const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: ImageItemProps) => {
-  const [image] = useImage(src);
+  const [image, imageStatus] = useImage(src);
   const imgRef = useRef<Image>(null);
   const transformerRef = useRef<Transformer>(null);
+
+  // Set initial size to either match canvas width or height
+  const [initSize, setInitSize] = useState({ width: 0, height: 0 });
+  useEffect(() => {
+    if (image && imageStatus === "loaded") {
+      const canvasSize = imgRef.current?.getParent()?.getSize();
+      if (!canvasSize) return;
+      const aspectRatio = image.width / image.height;
+      if (image.width < image.height)
+        setInitSize({ width: canvasSize.height * aspectRatio, height: canvasSize.height });
+      else
+        setInitSize({ width: canvasSize.width, height: canvasSize.width * (1 / aspectRatio) });
+    }
+  }, [image, imageStatus]);
 
   useEffect(() => {
     if (isSelected && imgRef.current) {
@@ -31,6 +45,8 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
       <KonvaImage
         image={image}
         alt={alt}
+        width={initSize.width}
+        height={initSize.height}
         onClick={onSelect}
         onTap={onSelect}
         ref={imgRef}
@@ -59,6 +75,7 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
             ...imgProps,
             x: node.x(),
             y: node.y(),
+
             // Set minimal value
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),
