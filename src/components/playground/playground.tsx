@@ -165,21 +165,53 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           <div className="w-75 mx-auto">
             <strong>Operations</strong>
             <div className="text-center">
-              <button type="button" className="btn btn-secondary m-1">Reset <i className="bi bi-arrow-counterclockwise ms-1"></i></button>
-              <button type="button" className="btn btn-secondary m-1">Duplicate <i className="bi bi-copy ms-1"></i></button>
-              <button type="button" className="btn btn-secondary m-1" onClick={() => { deleteImage(selectedId) }}>Delete <i className="bi bi-trash-fill text-danger ms-1"></i></button>
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null}>
+                Reset <i className="bi bi-arrow-counterclockwise ms-1"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null || selectedId == "baseImg"}>
+                Duplicate <i className="bi bi-copy ms-1"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null || selectedId == "baseImg"}
+                onClick={() => { deleteImage(selectedId) }}>
+                Delete <i className="bi bi-trash-fill text-danger ms-1"></i>
+              </button>
             </div>
             <hr />
           </div>
           {/* Exporting */}
           <div className="w-75 mx-auto">
             <strong>Exporting</strong>
-            <input type="text" className="form-control" id="imgNameInput" aria-describedby="imgNameHelp" value={exportName} onChange={(event) => { setExportName(event.target.value) }} placeholder="paw" />
+            <input
+              type="text"
+              className="form-control"
+              id="imgNameInput"
+              aria-describedby="imgNameHelp"
+              value={exportName}
+              onChange={(event) => { setExportName(event.target.value) }}
+              placeholder="paw" />
             <div id="imgNameHelp" className="form-text">Name your edit before saving</div>
             <br />
             <div className="text-center">
-              <button type="button" className="btn btn-primary m-1" >Save <i className="bi bi-bookmark-fill ms-1"></i></button>
-              <button type="button" className="btn btn-success m-1" onClick={handleExport}>Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i></button>
+              <button
+                type="button"
+                className="btn btn-primary m-1" >
+                Save <i className="bi bi-bookmark-fill ms-1"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-success m-1"
+                onClick={handleExport}>
+                Download <i className="bi bi-cloud-arrow-down-fill ms-1"></i>
+              </button>
             </div>
           </div>
         </div>
