@@ -31,19 +31,24 @@ const Home = () => {
         <Header />
         <hr />
 
-        <h5>Here are some examples:</h5>
-        <div>
-          <div className="row">
-            {
-              exampleIndices.map((index) => {
-                return (
-                  <div className="col" key={`example${index}`}>
-                    <Image className="img-fluid rounded border bg-body-secondary" src={`/images/examples/${index}.png`} alt={`Example ${index}`} width={200} height={0} placeholder="blur" blurDataURL="automatic" />
-                  </div>
-                )
-              })
-            }
-          </div>
+        <p>Here are some examples:</p>
+        <div className="row">
+          {
+            exampleIndices.map((index) => {
+              return (
+                <div className="col" key={`example${index}`}>
+                  <Image
+                    className="img-fluid rounded border bg-body-secondary"
+                    src={`/images/examples/${index}.png`}
+                    alt={`Example ${index}`}
+                    width={400}
+                    height={0}
+                    placeholder="blur"
+                    blurDataURL="automatic" />
+                </div>
+              )
+            })
+          }
         </div>
         <hr />
 
