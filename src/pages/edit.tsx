@@ -57,7 +57,7 @@ const Edit = () => {
               :
               <button type="button" className="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#uploadErrorModal">Start editing! <i className="bi bi-pencil-fill ms-1"></i></button>
           }
-          <CustomModal name="uploadErrorModal" title="No photo uploaded" content={<p>Upload a base pet photo to start editing</p>} />
+          <CustomModal id="uploadErrorModal" title="No photo uploaded" content={<p>Upload a base pet photo to start editing</p>} />
         </div>
       </div>
     )

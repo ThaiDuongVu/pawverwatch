@@ -1,2 +1,3 @@
-https://www.npmjs.com/package/@imgly/background-removal
-https://konvajs.org/
+TODO:
+- image operations
+- image item layer control

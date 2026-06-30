@@ -1,18 +1,18 @@
 import { ReactElement } from "react";
 
 type CustomModalProps = {
-  name: string;
+  id: string;
   title: string;
   content: ReactElement;
 }
 
-const CustomModal = ({ name, title, content }: CustomModalProps) => {
+const CustomModal = ({ id: id, title, content }: CustomModalProps) => {
   return (
-    <div className="modal fade" id={name} tabIndex={-1} aria-labelledby="modalLabel" aria-hidden="true">
+    <div className="modal fade" id={id} tabIndex={-1} aria-labelledby={`${id}ModalLabel`} aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h1 className="modal-title fs-5" id="modalLabel"><strong>{title}</strong></h1>
+            <h5 className="modal-title" id={`${id}ModalLabel`}><strong>{title}</strong></h5>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">

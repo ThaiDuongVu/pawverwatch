@@ -1,19 +1,22 @@
+import Image from "next/image";
+import { useEffect, useState, useRef } from "react";
 import { Stage } from "konva/lib/Stage";
 import { Layer } from "konva/lib/Layer";
-import { Stage as KonvaStage, Layer as KonvaLayer } from "react-konva";
-import { useEffect, useState, useRef } from "react";
-import ImageItem, { ImageProp } from "./image-item";
 import { KonvaEventObject } from "konva/lib/Node";
+import { Stage as KonvaStage, Layer as KonvaLayer } from "react-konva";
+import ImageItem, { ImageProp } from "./image-item";
+import HeroModal from "./hero-modal";
 import { downloadURI } from "@/helper";
-import Image from "next/image";
 
 interface PlaygroundProps {
   baseImageURL: string
 }
 
 interface HeroData {
+  id: string,
   name: string,
-  img: string
+  img: string,
+  items: []
 }
 
 const DEFAULT_EXPORT_NAME = "paw";
@@ -67,7 +70,6 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     }
   ];
   const [images, setImages] = useState(initImages);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const addImage = (image: ImageProp) => {
     setImages([...images, image]);
   }
@@ -91,6 +93,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   //#endregion
 
   const [heroData, setHeroData] = useState<HeroData[]>([]);
+  const [itemCount, setItemCount] = useState(0);
   const heroButtonsDisplay = () => {
     fetch("/data/heroes.json")
       .then((res) => res.json())
@@ -103,9 +106,19 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           heroData.map((hero) => {
             return (
               <div key={hero.name}>
-                <button type="button" className="btn btn-secondary p-1 m-1" title={`${hero.name}`}>
-                  <Image className="img-fluid rounded" src={`${hero.img}`} alt={`${hero.name}`} width={75} height={75} />
+                <button type="button" className="btn btn-secondary p-1 m-1" title={`${hero.name}`} data-bs-toggle="modal" data-bs-target={`#${hero.id}Modal`}>
+                  <Image className="img-fluid rounded" src={`${hero.img}`} alt={`${hero.name}`} width={75} height={75} loading="lazy" />
                 </button>
+                <HeroModal
+                  id={`${hero.id}Modal`}
+                  name={hero.name}
+                  icon={hero.img}
+                  items={hero.items}
+                  onItemClicked={(item) => {
+                    addImage({ src: item, x: 0, y: 0, id: `item${itemCount}` });
+                    setItemCount(itemCount + 1);
+                  }}
+                />
                 <br />
               </div>
             );

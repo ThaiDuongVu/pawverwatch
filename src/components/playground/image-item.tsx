@@ -27,7 +27,7 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
   const transformerRef = useRef<Transformer>(null);
 
   // Set initial size to either match canvas width or height
-  const [initSize, setInitSize] = useState({ width: 0, height: 0 });
+  const [initSize, setInitSize] = useState({ width: 100, height: 100 });
   useEffect(() => {
     if (imgProps.id !== "baseImg" || !image || imageStatus !== "loaded") return;
     const canvasSize = imgRef.current?.getParent()?.getSize();

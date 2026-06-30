@@ -1,210 +1,316 @@
 [
   {
     "name": "Ana",
-    "img": "/images/heroes/ana.png"
+    "id": "ana",
+    "img": "/images/heroes/ana.png",
+    "items": [
+      "/images/items/icon.png"
+    ]
   },
   {
     "name": "Anran",
-    "img": "/images/heroes/anran.png"
+    "id": "anran",
+    "img": "/images/heroes/anran.png",
+    "items": []
   },
   {
     "name": "Ashe",
-    "img": "/images/heroes/ashe.png"
+    "id": "ashe",
+    "img": "/images/heroes/ashe.png",
+    "items": []
   },
   {
     "name": "Baptiste",
-    "img": "/images/heroes/baptiste.png"
+    "id": "baptiste",
+    "img": "/images/heroes/baptiste.png",
+    "items": []
   },
   {
     "name": "Bastion",
-    "img": "/images/heroes/bastion.png"
+    "id": "bastion",
+    "img": "/images/heroes/bastion.png",
+    "items": []
   },
   {
     "name": "Brigitte",
-    "img": "/images/heroes/brigitte.png"
+    "id": "brigitte",
+    "img": "/images/heroes/brigitte.png",
+    "items": []
   },
   {
     "name": "Cassidy",
-    "img": "/images/heroes/cass.png"
+    "id": "cassidy",
+    "img": "/images/heroes/cass.png",
+    "items": []
   },
   {
     "name": "Domina",
-    "img": "/images/heroes/domina.png"
+    "id": "domina",
+    "img": "/images/heroes/domina.png",
+    "items": []
   },
   {
     "name": "Doomfist",
-    "img": "/images/heroes/doomfist.png"
+    "id": "doomfist",
+    "img": "/images/heroes/doomfist.png",
+    "items": []
   },
   {
     "name": "D.Va",
-    "img": "/images/heroes/dva.png"
+    "id": "dva",
+    "img": "/images/heroes/dva.png",
+    "items": []
   },
   {
     "name": "Echo",
-    "img": "/images/heroes/echo.png"
+    "id": "echo",
+    "img": "/images/heroes/echo.png",
+    "items": []
   },
   {
     "name": "Emre",
-    "img": "/images/heroes/emre.png"
+    "id": "emre",
+    "img": "/images/heroes/emre.png",
+    "items": []
   },
   {
     "name": "Freja",
-    "img": "/images/heroes/freja.png"
+    "id": "freja",
+    "img": "/images/heroes/freja.png",
+    "items": []
   },
   {
     "name": "Genji",
-    "img": "/images/heroes/genji.png"
+    "id": "genji",
+    "img": "/images/heroes/genji.png",
+    "items": []
   },
   {
     "name": "Hanzo",
-    "img": "/images/heroes/hanzo.png"
+    "id": "hanzo",
+    "img": "/images/heroes/hanzo.png",
+    "items": []
   },
   {
     "name": "Hazard",
-    "img": "/images/heroes/hazard.png"
+    "id": "hazard",
+    "img": "/images/heroes/hazard.png",
+    "items": []
   },
   {
     "name": "Illari",
-    "img": "/images/heroes/illari.png"
+    "id": "illari",
+    "img": "/images/heroes/illari.png",
+    "items": []
   },
   {
     "name": "Jetpack Cat",
-    "img": "/images/heroes/jetpackcat.png"
+    "id": "jetpackcat",
+    "img": "/images/heroes/jetpackcat.png",
+    "items": []
   },
   {
     "name": "Junker Queen",
-    "img": "/images/heroes/junkerqueen.png"
+    "id": "junkerqueen",
+    "img": "/images/heroes/junkerqueen.png",
+    "items": []
   },
   {
     "name": "Junkrat",
-    "img": "/images/heroes/junkrat.png"
+    "id": "junkrat",
+    "img": "/images/heroes/junkrat.png",
+    "items": []
   },
   {
     "name": "Juno",
-    "img": "/images/heroes/juno.png"
+    "id": "juno",
+    "img": "/images/heroes/juno.png",
+    "items": []
   },
   {
     "name": "Kiriko",
-    "img": "/images/heroes/kiriko.png"
+    "id": "kiriko",
+    "img": "/images/heroes/kiriko.png",
+    "items": []
   },
   {
     "name": "Lifeweaver",
-    "img": "/images/heroes/lifeweaver.png"
+    "id": "lifeweaver",
+    "img": "/images/heroes/lifeweaver.png",
+    "items": []
   },
   {
     "name": "Lucio",
-    "img": "/images/heroes/lucio.png"
+    "id": "lucio",
+    "img": "/images/heroes/lucio.png",
+    "items": []
   },
   {
     "name": "Mauga",
-    "img": "/images/heroes/mauga.png"
+    "id": "mauga",
+    "img": "/images/heroes/mauga.png",
+    "items": []
   },
   {
     "name": "Mei",
-    "img": "/images/heroes/mei.png"
+    "id": "mei",
+    "img": "/images/heroes/mei.png",
+    "items": []
   },
   {
     "name": "Mercy",
-    "img": "/images/heroes/mercy.png"
+    "id": "mercy",
+    "img": "/images/heroes/mercy.png",
+    "items": []
   },
   {
     "name": "Mizuki",
-    "img": "/images/heroes/mizuki.png"
+    "id": "mizuki",
+    "img": "/images/heroes/mizuki.png",
+    "items": []
   },
   {
     "name": "Moira",
-    "img": "/images/heroes/moira.png"
+    "id": "moira",
+    "img": "/images/heroes/moira.png",
+    "items": []
   },
   {
     "name": "Orisa",
-    "img": "/images/heroes/orisa.png"
+    "id": "orisa",
+    "img": "/images/heroes/orisa.png",
+    "items": []
   },
   {
     "name": "Pharah",
-    "img": "/images/heroes/pharah.png"
+    "id": "pharah",
+    "img": "/images/heroes/pharah.png",
+    "items": []
   },
   {
     "name": "Ramattra",
-    "img": "/images/heroes/ramattra.png"
+    "id": "ramattra",
+    "img": "/images/heroes/ramattra.png",
+    "items": []
   },
   {
     "name": "Reaper",
-    "img": "/images/heroes/reaper.png"
+    "id": "reaper",
+    "img": "/images/heroes/reaper.png",
+    "items": []
   },
   {
     "name": "Reinhardt",
-    "img": "/images/heroes/reinhardt.png"
+    "id": "reinhardt",
+    "img": "/images/heroes/reinhardt.png",
+    "items": []
   },
   {
     "name": "Roadhog",
-    "img": "/images/heroes/roadhog.png"
+    "id": "roadhog",
+    "img": "/images/heroes/roadhog.png",
+    "items": []
   },
   {
     "name": "Shion",
-    "img": "/images/heroes/shion.png"
+    "id": "shion",
+    "img": "/images/heroes/shion.png",
+    "items": []
   },
   {
     "name": "Sierra",
-    "img": "/images/heroes/sierra.png"
+    "id": "sierra",
+    "img": "/images/heroes/sierra.png",
+    "items": []
   },
   {
     "name": "Sigma",
-    "img": "/images/heroes/sigma.png"
+    "id": "sigma",
+    "img": "/images/heroes/sigma.png",
+    "items": []
   },
   {
     "name": "Sojourn",
-    "img": "/images/heroes/sojourn.png"
+    "id": "sojourn",
+    "img": "/images/heroes/sojourn.png",
+    "items": []
   },
   {
     "name": "Soldier: 76",
-    "img": "/images/heroes/soldier76.png"
+    "id": "soldier76",
+    "img": "/images/heroes/soldier76.png",
+    "items": []
   },
   {
     "name": "Sombra",
-    "img": "/images/heroes/sombra.png"
+    "id": "sombra",
+    "img": "/images/heroes/sombra.png",
+    "items": []
   },
   {
     "name": "Symmetra",
-    "img": "/images/heroes/symmetra.png"
+    "id": "symmetra",
+    "img": "/images/heroes/symmetra.png",
+    "items": []
   },
   {
     "name": "Torbjorn",
-    "img": "/images/heroes/torbjorn.png"
+    "id": "torbjorn",
+    "img": "/images/heroes/torbjorn.png",
+    "items": []
   },
   {
     "name": "Tracer",
-    "img": "/images/heroes/tracer.png"
+    "id": "tracer",
+    "img": "/images/heroes/tracer.png",
+    "items": []
   },
   {
     "name": "Vendetta",
-    "img": "/images/heroes/vendetta.png"
+    "id": "vendetta",
+    "img": "/images/heroes/vendetta.png",
+    "items": []
   },
   {
     "name": "Venture",
-    "img": "/images/heroes/venture.png"
+    "id": "venture",
+    "img": "/images/heroes/venture.png",
+    "items": []
   },
   {
     "name": "Widowmaker",
-    "img": "/images/heroes/widowmaker.png"
+    "id": "widowmaker",
+    "img": "/images/heroes/widowmaker.png",
+    "items": []
   },
   {
     "name": "Winston",
-    "img": "/images/heroes/winston.png"
+    "id": "winston",
+    "img": "/images/heroes/winston.png",
+    "items": []
   },
   {
     "name": "Wrecking Ball",
-    "img": "/images/heroes/wreckingball.png"
+    "id": "wreckingball",
+    "img": "/images/heroes/wreckingball.png",
+    "items": []
   },
   {
     "name": "Wuyang",
-    "img": "/images/heroes/wuyang.png"
+    "id": "wuyang",
+    "img": "/images/heroes/wuyang.png",
+    "items": []
   },
   {
     "name": "Zarya",
-    "img": "/images/heroes/zarya.png"
+    "id": "zarya",
+    "img": "/images/heroes/zarya.png",
+    "items": []
   },
   {
     "name": "Zenyatta",
-    "img": "/images/heroes/zenyatta.png"
+    "id": "zenyatta",
+    "img": "/images/heroes/zenyatta.png",
+    "items": []
   }
 ]
