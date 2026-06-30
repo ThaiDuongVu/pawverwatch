@@ -3,9 +3,7 @@
     "name": "Ana",
     "id": "ana",
     "img": "/images/heroes/ana.png",
-    "items": [
-      "/images/items/icon.png"
-    ]
+    "items": []
   },
   {
     "name": "Anran",
@@ -41,7 +39,16 @@
     "name": "Cassidy",
     "id": "cassidy",
     "img": "/images/heroes/cass.png",
-    "items": []
+    "items": [
+      "/images/items/cass/cass1.png",
+      "/images/items/cass/cass2.png",
+      "/images/items/cass/cass3.png",
+      "/images/items/cass/cass4.png",
+      "/images/items/cass/cass1-classic.png",
+      "/images/items/cass/cass2-classic.png",
+      "/images/items/cass/cass3-classic.png",
+      "/images/items/cass/cass4-classic.png"
+    ]
   },
   {
     "name": "Domina",

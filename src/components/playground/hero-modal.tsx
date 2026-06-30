@@ -23,7 +23,7 @@ const HeroModal = ({ id, name, icon, items, onItemClicked }: HeroModalProps) => 
               return (
                 <div key={item}>
                   <button type="button" className="btn btn-secondary shadow-lg m-1" title={`${name} item`} onClick={() => onItemClicked(item)}>
-                    <Image className="img-fluid" src={item} alt={`${name} item`} width={100} height={100} loading="lazy" />
+                    <Image className="img-fluid w-100" src={item} alt={`${name} item`} width={200} height={200} loading="lazy" />
                   </button>
                   <br />
                 </div>

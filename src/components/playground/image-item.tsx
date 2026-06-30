@@ -21,23 +21,34 @@ interface ImageItemProps {
   onChange: (newImg: any) => void
 }
 
+const ITEM_IMG_SIZE = 200;
+
 const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: ImageItemProps) => {
   const [image, imageStatus] = useImage(src);
   const imgRef = useRef<Image>(null);
   const transformerRef = useRef<Transformer>(null);
 
-  // Set initial size to either match canvas width or height
-  const [initSize, setInitSize] = useState({ width: 100, height: 100 });
+  const [initSize, setInitSize] = useState({ width: image?.width, height: image?.height });
   useEffect(() => {
-    if (imgProps.id !== "baseImg" || !image || imageStatus !== "loaded") return;
-    const canvasSize = imgRef.current?.getParent()?.getSize();
-    if (!canvasSize) return;
+    if (!image || imageStatus !== "loaded") return;
     const aspectRatio = image.width / image.height;
-    if (image.width < image.height)
-      setInitSize({ width: canvasSize.height * aspectRatio, height: canvasSize.height });
-    else
-      setInitSize({ width: canvasSize.width, height: canvasSize.width * (1 / aspectRatio) });
 
+    // Set initial size for base image
+    if (imgProps.id === "baseImg") {
+      const canvasSize = imgRef.current?.getParent()?.getSize();
+      if (!canvasSize) return;
+      if (image.width < image.height)
+        setInitSize({ width: canvasSize.height * aspectRatio, height: canvasSize.height });
+      else
+        setInitSize({ width: canvasSize.width, height: canvasSize.width * (1 / aspectRatio) });
+      return
+    }
+
+    // Set initial size for item image
+    if (image.width < image.height)
+      setInitSize({ width: ITEM_IMG_SIZE * aspectRatio, height: ITEM_IMG_SIZE });
+    else
+      setInitSize({ width: ITEM_IMG_SIZE, height: ITEM_IMG_SIZE * (1 / aspectRatio) });
   }, [imgProps.id, image, imageStatus]);
 
   useEffect(() => {

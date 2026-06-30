@@ -48,7 +48,7 @@ const Edit = () => {
         <hr />
         {/* Preview */}
         <div className="text-center">
-          <Image className="img-fluid rounded" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+          <Image className="img-fluid rounded w-25" src={baseImageURL} alt="Preview" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
           <br />
           {
             baseImageFile
@@ -94,12 +94,12 @@ const Edit = () => {
               <p>Choose which photo to edit</p>
               <div className="row">
                 <div className="col text-end">
-                  <Image className="img-fluid rounded" src={baseImageURL} alt="Original photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+                  <Image className="img-fluid rounded w-50" src={baseImageURL} alt="Original photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
                   <br />
                   <button type="button" className="btn btn-secondary m-2" onClick={() => { goToPlayground() }}>The OG <i className="bi bi-hand-index-fill ms-1"></i></button>
                 </div>
                 <div className="col text-start">
-                  <Image className="img-fluid rounded" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+                  <Image className="img-fluid rounded w-50" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
                   <br />
                   <button type="button" className="btn btn-warning m-2" onClick={() => { goToPlayground(true) }}><i className="bi bi-hand-index-fill me-1"></i> No background</button>
                 </div>
@@ -114,7 +114,7 @@ const Edit = () => {
                 <br />
                 Don&apos;t worry we&apos;ll handle it automatically.
               </p>
-              <Image className="img-fluid rounded" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
+              <Image className="img-fluid rounded w-25" src={bgRemovedImageURL} alt="BG removed photo" width={200} height={300} placeholder="blur" blurDataURL="automatic" />
               <br />
               <button type="button" className="btn btn-secondary m-2" onClick={() => { goToPlayground() }}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
               <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
