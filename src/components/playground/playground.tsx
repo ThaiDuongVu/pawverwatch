@@ -64,12 +64,11 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     // Always start with the base image
     {
       src: baseImageURL,
-      x: 0,
-      y: 0,
+      x: 0, y: 0, scaleX: 1, scaleY: 1, rotation: 0,
       id: "baseImg"
     }
   ];
-  const [images, setImages] = useState(initImages);
+  const [images, setImages] = useState<ImageProp[]>(initImages);
   const addImage = (image: ImageProp) => {
     setImages([...images, image]);
   }
@@ -86,6 +85,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedSrc, setSelectedSrc] = useState<string | null>(null);
   const [selectedPosition, setSelectedPosition] = useState({ x: 0, y: 0 });
+  const [selectedScale, setSelectedScale] = useState({ scaleX: 1, scaleY: 1 });
+  const [selectedRotation, setSelectedRotation] = useState(0);
   const checkDeselect = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
     // Deselect when clicked on empty area
     const clickedOnEmpty = event.target === event.target.getStage();
@@ -93,6 +94,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
       setSelectedId(null);
       setSelectedSrc("");
       setSelectedPosition({ x: 0, y: 0 });
+      setSelectedScale({ scaleX: 1, scaleY: 1 });
+      setSelectedRotation(0);
     }
   };
 
@@ -120,7 +123,13 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                   icon={hero.img}
                   items={hero.items}
                   onItemClicked={(item) => {
-                    addImage({ src: item, x: 0, y: 0, id: `item${itemCount}` });
+                    addImage({
+                      src: item,
+                      x: 0, y: 0,
+                      scaleX: 1, scaleY: 1,
+                      rotation: 0,
+                      id: `item${itemCount}`
+                    });
                     setItemCount(itemCount + 1);
                   }}
                 />
@@ -153,15 +162,20 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                     alt="Image"
                     imgProps={img}
                     isSelected={selectedId === img.id}
-                    onSelect={(x, y) => {
+                    onSelect={(x, y, scaleX, scaleY, rotation) => {
                       setSelectedId(img.id);
                       setSelectedSrc(img.src);
                       setSelectedPosition({ x, y });
+                      setSelectedScale({ scaleX, scaleY });
+                      setSelectedRotation(rotation);
                     }}
-                    onChange={(newImg: HTMLImageElement) => {
+                    onChange={(newImg: ImageProp) => {
                       const imgs = images.slice();
                       imgs[index] = newImg;
                       setImages(imgs);
+                      setSelectedPosition({x: newImg.x, y: newImg.y});
+                      setSelectedScale({ scaleX: newImg.scaleX, scaleY: newImg.scaleY });
+                      setSelectedRotation(newImg.rotation);
                     }} />
                 })
               }
@@ -177,7 +191,18 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
               <button
                 type="button"
                 className="btn btn-secondary m-1"
-                disabled={selectedId == null}>
+                disabled={selectedId == null}
+                onClick={() => {
+                  const imgs = images.slice();
+                  const index = images.findIndex(img => img.id === selectedId);
+                  imgs[index] = {
+                    ...imgs[index],
+                    x: 0, y: 0,
+                    scaleX: 1, scaleY: 1,
+                    rotation: 0
+                  };
+                  setImages(imgs);
+                }}>
                 Reset <i className="bi bi-arrow-counterclockwise ms-1"></i>
               </button>
               <button
@@ -188,8 +213,9 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                   if (!selectedId || !selectedSrc) return;
                   addImage({
                     src: selectedSrc,
-                    x: selectedPosition.x + 100,
-                    y: selectedPosition.y + 100,
+                    x: selectedPosition.x + 50, y: selectedPosition.y + 50,
+                    scaleX: selectedScale.scaleX, scaleY: selectedScale.scaleY,
+                    rotation: selectedRotation,
                     id: `item${itemCount}`
                   });
                   setItemCount(itemCount + 1);

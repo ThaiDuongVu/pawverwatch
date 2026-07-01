@@ -6,8 +6,7 @@ import useImage from "use-image";
 
 export interface ImageProp {
   src: string,
-  x: number,
-  y: number,
+  x: number, y: number, scaleX: number, scaleY: number, rotation: number,
   id: string
 }
 
@@ -16,7 +15,7 @@ interface ImageItemProps {
   alt?: string | "",
   imgProps: ImageProp,
   isSelected: boolean,
-  onSelect: (x: number, y: number) => void,
+  onSelect: (x: number, y: number, scaleX: number, scaleY: number, rotation: number) => void,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (newImg: any) => void
 }
@@ -72,12 +71,12 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
         onClick={() => {
           const node = imgRef.current;
           if (!node) return;
-          onSelect(node.x(), node.y());
+          onSelect(node.x(), node.y(), node.scaleX(), node.scaleY(), node.rotation());
         }}
         onTap={() => {
           const node = imgRef.current;
           if (!node) return;
-          onSelect(node.x(), node.y());
+          onSelect(node.x(), node.y(), node.scaleX(), node.scaleY(), node.rotation());
         }}
         ref={imgRef}
         {...imgProps}
@@ -85,8 +84,9 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
         onDragEnd={(event) => {
           onChange({
             ...imgProps,
-            x: event.target.x(),
-            y: event.target.y()
+            x: event.target.x(), y: event.target.y(),
+            scaleX: event.target.scaleX(), scaleY: event.target.scaleY(),
+            rotation: event.target.rotation()
           })
         }}
         onTransformEnd={() => {
@@ -102,8 +102,9 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
           node.scaleY(1);
           onChange({
             ...imgProps,
-            x: node.x(),
-            y: node.y(),
+            x: node.x(), y: node.y(),
+            scaleX: node.scaleX(), scaleY: node.scaleY(),
+            rotation: node.rotation(),
             // Set minimal value
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),
