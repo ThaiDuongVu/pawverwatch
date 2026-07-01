@@ -5,7 +5,7 @@ interface HeroModalProps {
   id: string,
   name: string,
   icon: string,
-  items: [],
+  items: string[],
   onItemClicked: (item: string) => void
 }
 

@@ -16,7 +16,7 @@ interface ImageItemProps {
   alt?: string | "",
   imgProps: ImageProp,
   isSelected: boolean,
-  onSelect: () => void,
+  onSelect: (x: number, y: number) => void,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (newImg: any) => void
 }
@@ -27,6 +27,8 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
   const [image, imageStatus] = useImage(src);
   const imgRef = useRef<Image>(null);
   const transformerRef = useRef<Transformer>(null);
+
+  //#region Initial size
 
   const [initSize, setInitSize] = useState({ width: image?.width, height: image?.height });
   useEffect(() => {
@@ -51,9 +53,11 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
       setInitSize({ width: ITEM_IMG_SIZE, height: ITEM_IMG_SIZE * (1 / aspectRatio) });
   }, [imgProps.id, image, imageStatus]);
 
+  //#endregion
+
+  // Attach transformer manually
   useEffect(() => {
     if (isSelected && imgRef.current) {
-      // Attach transformer manually
       transformerRef.current?.nodes([imgRef.current]);
     }
   }, [isSelected]);
@@ -65,8 +69,16 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
         alt={alt}
         width={initSize.width}
         height={initSize.height}
-        onClick={onSelect}
-        onTap={onSelect}
+        onClick={() => {
+          const node = imgRef.current;
+          if (!node) return;
+          onSelect(node.x(), node.y());
+        }}
+        onTap={() => {
+          const node = imgRef.current;
+          if (!node) return;
+          onSelect(node.x(), node.y());
+        }}
         ref={imgRef}
         {...imgProps}
         draggable

@@ -84,10 +84,16 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
   // #region Handle item selection
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedSrc, setSelectedSrc] = useState<string | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState({ x: 0, y: 0 });
   const checkDeselect = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
     // Deselect when clicked on empty area
     const clickedOnEmpty = event.target === event.target.getStage();
-    if (clickedOnEmpty) setSelectedId(null);
+    if (clickedOnEmpty) {
+      setSelectedId(null);
+      setSelectedSrc("");
+      setSelectedPosition({ x: 0, y: 0 });
+    }
   };
 
   //#endregion
@@ -98,7 +104,6 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     fetch("/data/heroes.json")
       .then((res) => res.json())
       .then((data) => setHeroData(data));
-
     return (
       <div className="w-75 mx-auto">
         <p><strong>Heroes</strong></p>
@@ -148,7 +153,11 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                     alt="Image"
                     imgProps={img}
                     isSelected={selectedId === img.id}
-                    onSelect={() => { setSelectedId(img.id) }}
+                    onSelect={(x, y) => {
+                      setSelectedId(img.id);
+                      setSelectedSrc(img.src);
+                      setSelectedPosition({ x, y });
+                    }}
                     onChange={(newImg: HTMLImageElement) => {
                       const imgs = images.slice();
                       imgs[index] = newImg;
@@ -174,7 +183,17 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
               <button
                 type="button"
                 className="btn btn-secondary m-1"
-                disabled={selectedId == null || selectedId == "baseImg"}>
+                disabled={selectedId == null || selectedId == "baseImg"}
+                onClick={() => {
+                  if (!selectedId || !selectedSrc) return;
+                  addImage({
+                    src: selectedSrc,
+                    x: selectedPosition.x + 100,
+                    y: selectedPosition.y + 100,
+                    id: `item${itemCount}`
+                  });
+                  setItemCount(itemCount + 1);
+                }}>
                 Duplicate <i className="bi bi-copy ms-1"></i>
               </button>
               <button
