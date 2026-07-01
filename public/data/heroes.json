@@ -68,7 +68,24 @@
     "name": "Brigitte",
     "id": "brigitte",
     "img": "/images/heroes/brigitte.png",
-    "items": []
+    "items": [
+      "/images/items/brig/brig7.png",
+      "/images/items/brig/brig6.png",
+      "/images/items/brig/brig5.png",
+      "/images/items/brig/brig8.png",
+      "/images/items/brig/brig9.png",
+      "/images/items/brig/brig10.png",
+      "/images/items/brig/brig11.png",
+      "/images/items/brig/brig12.png",
+      "/images/items/brig/brig13.png",
+      "/images/items/brig/brig14.png",
+      "/images/items/brig/brig1.png",
+      "/images/items/brig/brig2.png",
+      "/images/items/brig/brig3.png",
+      "/images/items/brig/brig4.png",
+      "/images/items/brig/brig-cute.png",
+      "/images/items/brig/brig-pixel.png"
+    ]
   },
   {
     "name": "Cassidy",
@@ -147,13 +164,29 @@
     "name": "Illari",
     "id": "illari",
     "img": "/images/heroes/illari.png",
-    "items": []
+    "items": [
+      "/images/items/illari/illari4.png",
+      "/images/items/illari/illari5.png",
+      "/images/items/illari/illari6.png",
+      "/images/items/illari/illari1.png",
+      "/images/items/illari/illari2.png",
+      "/images/items/illari/illari3.png",
+      "/images/items/illari/illari-cute.png",
+      "/images/items/illari/illari-pixel.png"
+    ]
   },
   {
     "name": "Jetpack Cat",
     "id": "jetpackcat",
     "img": "/images/heroes/jetpackcat.png",
-    "items": []
+    "items": [
+      "/images/items/jpc/jpc1.png",
+      "/images/items/jpc/jpc2.png",
+      "/images/items/jpc/jpc3.png",
+      "/images/items/jpc/jpc4.png",
+      "/images/items/jpc/jpc-cute.png",
+      "/images/items/jpc/jpc-pixel.png"
+    ]
   },
   {
     "name": "Junker Queen",
@@ -171,7 +204,20 @@
     "name": "Juno",
     "id": "juno",
     "img": "/images/heroes/juno.png",
-    "items": []
+    "items": [
+      "/images/items/juno/juno4.png",
+      "/images/items/juno/juno5.png",
+      "/images/items/juno/juno6.png",
+      "/images/items/juno/juno7.png",
+      "/images/items/juno/juno8.png",
+      "/images/items/juno/juno9.png",
+      "/images/items/juno/juno10.png",
+      "/images/items/juno/juno1.png",
+      "/images/items/juno/juno2.png",
+      "/images/items/juno/juno3.png",
+      "/images/items/juno/juno-cute.png",
+      "/images/items/juno/juno-pixel.png"
+    ]
   },
   {
     "name": "Kiriko",
