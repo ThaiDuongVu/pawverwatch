@@ -173,7 +173,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                       const imgs = images.slice();
                       imgs[index] = newImg;
                       setImages(imgs);
-                      setSelectedPosition({x: newImg.x, y: newImg.y});
+                      setSelectedPosition({ x: newImg.x, y: newImg.y });
                       setSelectedScale({ scaleX: newImg.scaleX, scaleY: newImg.scaleY });
                       setSelectedRotation(newImg.rotation);
                     }} />
@@ -188,6 +188,36 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           <div className="w-75 mx-auto">
             <strong>Operations</strong>
             <div className="text-center">
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null}
+                onClick={() => {
+                  const imgs = images.slice();
+                  const index = images.findIndex(img => img.id === selectedId);
+                  imgs[index] = {
+                    ...imgs[index],
+                    scaleX: -imgs[index].scaleX
+                  };
+                  setImages(imgs);
+                }}>
+                Flip horizontal <i className="bi bi-arrow-left-right ms-1"></i>
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null}
+                onClick={() => {
+                  const imgs = images.slice();
+                  const index = images.findIndex(img => img.id === selectedId);
+                  imgs[index] = {
+                    ...imgs[index],
+                    scaleY: -imgs[index].scaleY
+                  };
+                  setImages(imgs);
+                }}>
+                Flip vertical <i className="bi bi-arrow-down-up ms-1"></i>
+              </button>
               <button
                 type="button"
                 className="btn btn-secondary m-1"

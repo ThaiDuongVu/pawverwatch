@@ -90,24 +90,22 @@ const ImageItem = ({ src, alt, imgProps, isSelected, onSelect, onChange }: Image
           })
         }}
         onTransformEnd={() => {
-          // Transformer changes the scale of the node
-          // but NOT its width or height
-          // Reset scale on transform end
           const node = imgRef.current;
           if (!node) return;
-          const scaleX = node.scaleX();
-          const scaleY = node.scaleY();
           // Reset
-          node.scaleX(1);
-          node.scaleY(1);
+          // const scaleX = node.scaleX();
+          // const scaleY = node.scaleY();
+          // node.scaleX(scaleX > 0 ? 1 : -1);
+          // node.scaleY(scaleY > 0 ? 1 : -1);
           onChange({
             ...imgProps,
             x: node.x(), y: node.y(),
             scaleX: node.scaleX(), scaleY: node.scaleY(),
             rotation: node.rotation(),
+            // width: node.width(), height: node.height()
             // Set minimal value
-            width: Math.max(5, node.width() * scaleX),
-            height: Math.max(node.height() * scaleY),
+            // width: Math.max(5, node.width() * scaleX),
+            // height: Math.max(node.height() * scaleY),
           });
         }}
       />
