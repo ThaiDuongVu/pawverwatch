@@ -3,13 +3,32 @@
     "name": "Ana",
     "id": "ana",
     "img": "/images/heroes/ana.png",
-    "items": []
+    "items": [
+      "/images/items/ana/ana1.png",
+      "/images/items/ana/ana2.png",
+      "/images/items/ana/ana4.png",
+      "/images/items/ana/ana5.png",
+      "/images/items/ana/ana6.png",
+      "/images/items/ana/ana7.png",
+      "/images/items/ana/ana8.png",
+      "/images/items/ana/ana9.png",
+      "/images/items/ana/ana-cute.png",
+      "/images/items/ana/ana-pixel.png"
+    ]
   },
   {
     "name": "Anran",
     "id": "anran",
     "img": "/images/heroes/anran.png",
-    "items": []
+    "items": [
+      "/images/items/anran/anran1.png",
+      "/images/items/anran/anran2.png",
+      "/images/items/anran/anran3.png",
+      "/images/items/anran/anran4.png",
+      "/images/items/anran/anran5.png",
+      "/images/items/anran/anran-cute.png",
+      "/images/items/anran/anran-pixel.png"
+    ]
   },
   {
     "name": "Ashe",
@@ -21,7 +40,23 @@
     "name": "Baptiste",
     "id": "baptiste",
     "img": "/images/heroes/baptiste.png",
-    "items": []
+    "items": [
+      "/images/items/bap/bap7.png",
+      "/images/items/bap/bap8.png",
+      "/images/items/bap/bap9.png",
+      "/images/items/bap/bap10.png",
+      "/images/items/bap/bap11.png",
+      "/images/items/bap/bap12.png",
+      "/images/items/bap/bap13.png",
+      "/images/items/bap/bap14.png",
+      "/images/items/bap/bap2.png",
+      "/images/items/bap/bap3.png",
+      "/images/items/bap/bap4.png",
+      "/images/items/bap/bap5.png",
+      "/images/items/bap/bap6.png",
+      "/images/items/bap/bap-cute.png",
+      "/images/items/bap/bap-pixel.png"
+    ]
   },
   {
     "name": "Bastion",
