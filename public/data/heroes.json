@@ -44,10 +44,14 @@
       "/images/items/cass/cass2.png",
       "/images/items/cass/cass3.png",
       "/images/items/cass/cass4.png",
+      "/images/items/cass/cass5.png",
+      "/images/items/cass/cass6.png",
       "/images/items/cass/cass1-classic.png",
       "/images/items/cass/cass2-classic.png",
       "/images/items/cass/cass3-classic.png",
-      "/images/items/cass/cass4-classic.png"
+      "/images/items/cass/cass4-classic.png",
+      "/images/items/cass/cass-cute.png",
+      "/images/items/cass/cass-pixel.png"
     ]
   },
   {
@@ -144,7 +148,18 @@
     "name": "Lifeweaver",
     "id": "lifeweaver",
     "img": "/images/heroes/lifeweaver.png",
-    "items": []
+    "items": [
+      "/images/items/lifeweaver/lifeweaver1.png",
+      "/images/items/lifeweaver/lifeweaver2.png",
+      "/images/items/lifeweaver/lifeweaver3.png",
+      "/images/items/lifeweaver/lifeweaver4.png",
+      "/images/items/lifeweaver/lifeweaver5.png",
+      "/images/items/lifeweaver/lifeweaver6.png",
+      "/images/items/lifeweaver/lifeweaver7.png",
+      "/images/items/lifeweaver/lifeweaver8.png",
+      "/images/items/lifeweaver/lifeweaver-cute.png",
+      "/images/items/lifeweaver/lifeweaver-pixel.png"
+    ]
   },
   {
     "name": "Lucio",
