@@ -223,7 +223,21 @@
     "name": "Kiriko",
     "id": "kiriko",
     "img": "/images/heroes/kiriko.png",
-    "items": []
+    "items": [
+      "/images/items/kiri/kiri5.png",
+      "/images/items/kiri/kiri6.png",
+      "/images/items/kiri/kiri7.png",
+      "/images/items/kiri/kiri1.png",
+      "/images/items/kiri/kiri2.png",
+      "/images/items/kiri/kiri3.png",
+      "/images/items/kiri/kiri8.png",
+      "/images/items/kiri/kiri11.png",
+      "/images/items/kiri/kiri9.png",
+      "/images/items/kiri/kiri10.png",
+      "/images/items/kiri/fox.png",
+      "/images/items/kiri/kiri-cute.png",
+      "/images/items/kiri/kiri-pixel.png"
+    ]
   },
   {
     "name": "Lifeweaver",
