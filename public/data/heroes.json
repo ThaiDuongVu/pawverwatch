@@ -260,7 +260,20 @@
     "name": "Lucio",
     "id": "lucio",
     "img": "/images/heroes/lucio.png",
-    "items": []
+    "items": [
+      "/images/items/lucio/lucio3.png",
+      "/images/items/lucio/lucio4.png",
+      "/images/items/lucio/lucio5.png",
+      "/images/items/lucio/lucio6.png",
+      "/images/items/lucio/lucio7.png",
+      "/images/items/lucio/lucio8.png",
+      "/images/items/lucio/lucio9.png",
+      "/images/items/lucio/lucio10.png",
+      "/images/items/lucio/lucio1.png",
+      "/images/items/lucio/lucio2.png",
+      "/images/items/lucio/lucio-cute.png",
+      "/images/items/lucio/lucio-pixel.png"
+    ]
   },
   {
     "name": "Mauga",
@@ -278,13 +291,36 @@
     "name": "Mercy",
     "id": "mercy",
     "img": "/images/heroes/mercy.png",
-    "items": []
+    "items": [
+      "/images/items/mercy/mercy5.png",
+      "/images/items/mercy/mercy6.png",
+      "/images/items/mercy/mercy7.png",
+      "/images/items/mercy/mercy4.png",
+      "/images/items/mercy/mercy8.png",
+      "/images/items/mercy/mercy9.png",
+      "/images/items/mercy/mercy10.png",
+      "/images/items/mercy/mercy11.png",
+      "/images/items/mercy/mercy2.png",
+      "/images/items/mercy/mercy3.png",
+      "/images/items/mercy/mercy1.png",
+      "/images/items/mercy/mercy-cute.png",
+      "/images/items/mercy/mercy-pixel.png"
+    ]
   },
   {
     "name": "Mizuki",
     "id": "mizuki",
     "img": "/images/heroes/mizuki.png",
-    "items": []
+    "items": [
+      "/images/items/mizuki/mizuki-hat.png",
+      "/images/items/mizuki/mizuki1.png",
+      "/images/items/mizuki/mizuki2.png",
+      "/images/items/mizuki/mizuki3.png",
+      "/images/items/mizuki/mizuki4.png",
+      "/images/items/mizuki/mizuki5.png",
+      "/images/items/mizuki/mizuki-cute.png",
+      "/images/items/mizuki/mizuki-pixel.png"
+    ]
   },
   {
     "name": "Moira",
