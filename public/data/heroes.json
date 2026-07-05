@@ -34,7 +34,23 @@
     "name": "Ashe",
     "id": "ashe",
     "img": "/images/heroes/ashe.png",
-    "items": []
+    "items": [
+      "/images/items/ashe/ashe2.png",
+      "/images/items/ashe/ashe3.png",
+      "/images/items/ashe/ashe4.png",
+      "/images/items/ashe/ashe5.png",
+      "/images/items/ashe/ashe1.png",
+      "/images/items/ashe/ashe-gun.png",
+      "/images/items/ashe/bob1.png",
+      "/images/items/ashe/bob2.png",
+      "/images/items/ashe/bob3.png",
+      "/images/items/ashe/bob4.png",
+      "/images/items/ashe/bob5.png",
+      "/images/items/ashe/bob6.png",
+      "/images/items/ashe/bob7.png",
+      "/images/items/ashe/ashe-cute.png",
+      "/images/items/ashe/ashe-pixel.png"
+    ]
   },
   {
     "name": "Baptiste",
@@ -62,7 +78,20 @@
     "name": "Bastion",
     "id": "bastion",
     "img": "/images/heroes/bastion.png",
-    "items": []
+    "items": [
+      "/images/items/bastion/bastion1.png",
+      "/images/items/bastion/bastion2.png",
+      "/images/items/bastion/bastion3.png",
+      "/images/items/bastion/bastion4.png",
+      "/images/items/bastion/bastion5.png",
+      "/images/items/bastion/bastion6.png",
+      "/images/items/bastion/bastion7.png",
+      "/images/items/bastion/bastion8.png",
+      "/images/items/bastion/bird1.png",
+      "/images/items/bastion/bird2.png",
+      "/images/items/bastion/bastion-cute.png",
+      "/images/items/bastion/bastion-pixel.png"
+    ]
   },
   {
     "name": "Brigitte",
@@ -110,37 +139,94 @@
     "name": "Domina",
     "id": "domina",
     "img": "/images/heroes/domina.png",
-    "items": []
+    "items": [
+      "/images/items/domina/domina1.png",
+      "/images/items/domina/domina2.png",
+      "/images/items/domina/domina3.png",
+      "/images/items/domina/domina4.png",
+      "/images/items/domina/domina-cute.png",
+      "/images/items/domina/domina-pixel.png"
+    ]
   },
   {
     "name": "Doomfist",
     "id": "doomfist",
     "img": "/images/heroes/doomfist.png",
-    "items": []
+    "items": [
+      "/images/items/doom/doom4.png",
+      "/images/items/doom/doom5.png",
+      "/images/items/doom/doom6.png",
+      "/images/items/doom/doom7.png",
+      "/images/items/doom/doom8.png",
+      "/images/items/doom/doom9.png",
+      "/images/items/doom/doom10.png",
+      "/images/items/doom/doom1.png",
+      "/images/items/doom/doom2.png",
+      "/images/items/doom/doom3.png",
+      "/images/items/doom/doom-cute.png",
+      "/images/items/doom/doom-pixel.png"
+    ]
   },
   {
     "name": "D.Va",
     "id": "dva",
     "img": "/images/heroes/dva.png",
-    "items": []
+    "items": [
+      "/images/items/dva/dva1.png",
+      "/images/items/dva/dva2.png",
+      "/images/items/dva/dva3.png",
+      "/images/items/dva/dva4.png",
+      "/images/items/dva/dva5.png",
+      "/images/items/dva/dva-bunny.png",
+      "/images/items/dva/dva-gun.png",
+      "/images/items/dva/dva-cute.png",
+      "/images/items/dva/dva-pixel.png"
+    ]
   },
   {
     "name": "Echo",
     "id": "echo",
     "img": "/images/heroes/echo.png",
-    "items": []
+    "items": [
+      "/images/items/echo/echo1.png",
+      "/images/items/echo/echo2.png",
+      "/images/items/echo/echo3.png",
+      "/images/items/echo/echo4.png",
+      "/images/items/echo/echo5.png",
+      "/images/items/echo/echo6.png",
+      "/images/items/echo/echo-cute.png",
+      "/images/items/echo/echo-pixel.png"
+    ]
   },
   {
     "name": "Emre",
     "id": "emre",
     "img": "/images/heroes/emre.png",
-    "items": []
+    "items": [
+      "/images/items/emre/emre1.png",
+      "/images/items/emre/emre2.png",
+      "/images/items/emre/emre3.png",
+      "/images/items/emre/emre4.png",
+      "/images/items/emre/emre5.png",
+      "/images/items/emre/emre6.png",
+      "/images/items/emre/emre7.png",
+      "/images/items/emre/emre-cute.png",
+      "/images/items/emre/emre-pixel.png"
+    ]
   },
   {
     "name": "Freja",
     "id": "freja",
     "img": "/images/heroes/freja.png",
-    "items": []
+    "items": [
+      "/images/items/freja/freja1.png",
+      "/images/items/freja/freja2.png",
+      "/images/items/freja/freja3.png",
+      "/images/items/freja/freja4.png",
+      "/images/items/freja/freja-crossbow.png",
+      "/images/items/freja/freja-cute.png",
+      "/images/items/freja/freja-pixel.png"
+    ]
   },
   {
     "name": "Genji",
