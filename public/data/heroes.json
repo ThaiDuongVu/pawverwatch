@@ -326,7 +326,18 @@
     "name": "Moira",
     "id": "moira",
     "img": "/images/heroes/moira.png",
-    "items": []
+    "items": [
+      "/images/items/moira/moira3.png",
+      "/images/items/moira/moira4.png",
+      "/images/items/moira/moira5.png",
+      "/images/items/moira/moira6.png",
+      "/images/items/moira/moira7.png",
+      "/images/items/moira/moira1.png",
+      "/images/items/moira/moira-orb-dmg.png",
+      "/images/items/moira/moira-orb-heal.png",
+      "/images/items/moira/moira-cute.png",
+      "/images/items/moira/moira-pixel.png"
+    ]
   },
   {
     "name": "Orisa",
@@ -452,7 +463,20 @@
     "name": "Wuyang",
     "id": "wuyang",
     "img": "/images/heroes/wuyang.png",
-    "items": []
+    "items": [
+      "/images/items/wuyang/wuyang1.png",
+      "/images/items/wuyang/wuyang2.png",
+      "/images/items/wuyang/wuyang-staff.png",
+      "/images/items/wuyang/wuyang3.png",
+      "/images/items/wuyang/wuyang4.png",
+      "/images/items/wuyang/wuyang5.png",
+      "/images/items/wuyang/wuyang6.png",
+      "/images/items/wuyang/wuyang7.png",
+      "/images/items/wuyang/wuyang8.png",
+      "/images/items/wuyang/wuyang9.png",
+      "/images/items/wuyang/wuyang-cute.png",
+      "/images/items/wuyang/wuyang-pixel.png"
+    ]
   },
   {
     "name": "Zarya",
@@ -464,6 +488,18 @@
     "name": "Zenyatta",
     "id": "zenyatta",
     "img": "/images/heroes/zenyatta.png",
-    "items": []
+    "items": [
+      "/images/items/zen/zen1.png",
+      "/images/items/zen/zen2.png",
+      "/images/items/zen/zen3.png",
+      "/images/items/zen/zen4.png",
+      "/images/items/zen/zen5.png",
+      "/images/items/zen/zen-discord.png",
+      "/images/items/zen/orb1.png",
+      "/images/items/zen/orb2.png",
+      "/images/items/zen/orb3.png",
+      "/images/items/zen/zen-cute.png",
+      "/images/items/zen/zen-pixel.png"
+    ]
   }
 ]
