@@ -232,19 +232,59 @@
     "name": "Genji",
     "id": "genji",
     "img": "/images/heroes/genji.png",
-    "items": []
+    "items": [
+      "/images/items/genji/genji3.png",
+      "/images/items/genji/genji8.png",
+      "/images/items/genji/genji4.png",
+      "/images/items/genji/genji5.png",
+      "/images/items/genji/genji6.png",
+      "/images/items/genji/genji7.png",
+      "/images/items/genji/genji10.png",
+      "/images/items/genji/genji9.png",
+      "/images/items/genji/genji1.png",
+      "/images/items/genji/genji2.png",
+      "/images/items/genji/genji-sword.png",
+      "/images/items/genji/genji-cute.png",
+      "/images/items/genji/genji-pixel.png"
+    ]
   },
   {
     "name": "Hanzo",
     "id": "hanzo",
     "img": "/images/heroes/hanzo.png",
-    "items": []
+    "items": [
+      "/images/items/hanzo/hanzo1.png",
+      "/images/items/hanzo/hanzo6.png",
+      "/images/items/hanzo/hanzo2.png",
+      "/images/items/hanzo/hanzo3.png",
+      "/images/items/hanzo/hanzo4.png",
+      "/images/items/hanzo/hanzo5.png",
+      "/images/items/hanzo/hanzo7.png",
+      "/images/items/hanzo/hanzo-bow.png",
+      "/images/items/hanzo/hanzo8.png",
+      "/images/items/hanzo/hanzo9.png",
+      "/images/items/hanzo/hanzo10.png",
+      "/images/items/hanzo/hanzo-cute.png",
+      "/images/items/hanzo/hanzo-pixel.png"
+    ]
   },
   {
     "name": "Hazard",
     "id": "hazard",
     "img": "/images/heroes/hazard.png",
-    "items": []
+    "items": [
+      "/images/items/hazard/hazard1.png",
+      "/images/items/hazard/hazard2.png",
+      "/images/items/hazard/hazard3.png",
+      "/images/items/hazard/hazard4.png",
+      "/images/items/hazard/hazard5.png",
+      "/images/items/hazard/hazard6.png",
+      "/images/items/hazard/hazard7.png",
+      "/images/items/hazard/hazard8.png",
+      "/images/items/hazard/hazard9.png",
+      "/images/items/hazard/hazard-cute.png",
+      "/images/items/hazard/hazard-pixel.png"
+    ]
   },
   {
     "name": "Illari",
@@ -278,13 +318,38 @@
     "name": "Junker Queen",
     "id": "junkerqueen",
     "img": "/images/heroes/junkerqueen.png",
-    "items": []
+    "items": [
+      "/images/items/jq/jq1.png",
+      "/images/items/jq/jq2.png",
+      "/images/items/jq/jq3.png",
+      "/images/items/jq/jq4.png",
+      "/images/items/jq/jq5.png",
+      "/images/items/jq/jq6.png",
+      "/images/items/jq/jq-gun.png",
+      "/images/items/jq/jq-knife.png",
+      "/images/items/jq/jq-axe.png",
+      "/images/items/jq/jq-cute.png",
+      "/images/items/jq/jq-pixel.png"
+    ]
   },
   {
     "name": "Junkrat",
     "id": "junkrat",
     "img": "/images/heroes/junkrat.png",
-    "items": []
+    "items": [
+      "/images/items/junkrat/junkrat1.png",
+      "/images/items/junkrat/junkrat2.png",
+      "/images/items/junkrat/junkrat3.png",
+      "/images/items/junkrat/junkrat4.png",
+      "/images/items/junkrat/junkrat5.png",
+      "/images/items/junkrat/junkrat6.png",
+      "/images/items/junkrat/junkrat7.png",
+      "/images/items/junkrat/junkrat-gun.png",
+      "/images/items/junkrat/junkrat-trap.png",
+      "/images/items/junkrat/junkrat-tire.png",
+      "/images/items/junkrat/junkrat-cute.png",
+      "/images/items/junkrat/junkrat-pixel.png"
+    ]
   },
   {
     "name": "Juno",
