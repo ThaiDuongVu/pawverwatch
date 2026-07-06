@@ -430,13 +430,33 @@
     "name": "Mauga",
     "id": "mauga",
     "img": "/images/heroes/mauga.png",
-    "items": []
+    "items": [
+      "/images/items/mauga/mauga1.png",
+      "/images/items/mauga/mauga2.png",
+      "/images/items/mauga/mauga3.png",
+      "/images/items/mauga/mauga4.png",
+      "/images/items/mauga/mauga5.png",
+      "/images/items/mauga/mauga-cute.png",
+      "/images/items/mauga/mauga-pixel.png"
+    ]
   },
   {
     "name": "Mei",
     "id": "mei",
     "img": "/images/heroes/mei.png",
-    "items": []
+    "items": [
+      "/images/items/mei/mei1.png",
+      "/images/items/mei/mei2.png",
+      "/images/items/mei/mei3.png",
+      "/images/items/mei/mei4.png",
+      "/images/items/mei/mei-gun.png",
+      "/images/items/mei/snowball.png",
+      "/images/items/mei/snowball1.png",
+      "/images/items/mei/snowball2.png",
+      "/images/items/mei/snowball3.png",
+      "/images/items/mei/mei-cute.png",
+      "/images/items/mei/mei-pixel.png"
+    ]
   },
   {
     "name": "Mercy",
@@ -494,31 +514,85 @@
     "name": "Orisa",
     "id": "orisa",
     "img": "/images/heroes/orisa.png",
-    "items": []
+    "items": [
+      "/images/items/orisa/orisa1.png",
+      "/images/items/orisa/orisa2.png",
+      "/images/items/orisa/orisa3.png",
+      "/images/items/orisa/orisa4.png",
+      "/images/items/orisa/orisa44.png",
+      "/images/items/orisa/orisa-gun.png",
+      "/images/items/orisa/orisa5.png",
+      "/images/items/orisa/orisa6.png",
+      "/images/items/orisa/orisa7.png",
+      "/images/items/orisa/orisa-cute.png",
+      "/images/items/orisa/orisa-pixel.png"
+    ]
   },
   {
     "name": "Pharah",
     "id": "pharah",
     "img": "/images/heroes/pharah.png",
-    "items": []
+    "items": [
+      "/images/items/pharah/pharah1.png",
+      "/images/items/pharah/pharah2.png",
+      "/images/items/pharah/pharah3.png",
+      "/images/items/pharah/pharah4.png",
+      "/images/items/pharah/pharah5.png",
+      "/images/items/pharah/pharah6.png",
+      "/images/items/pharah/pharah7.png",
+      "/images/items/pharah/pharah-gun.png",
+      "/images/items/pharah/pharah-gun2.png",
+      "/images/items/pharah/pharah-cute.png",
+      "/images/items/pharah/pharah-pixel.png"
+    ]
   },
   {
     "name": "Ramattra",
     "id": "ramattra",
     "img": "/images/heroes/ramattra.png",
-    "items": []
+    "items": [
+      "/images/items/ram/ram1.png",
+      "/images/items/ram/ram2.png",
+      "/images/items/ram/ram3.png",
+      "/images/items/ram/ram4.png",
+      "/images/items/ram/ram5.png",
+      "/images/items/ram/ram6.png",
+      "/images/items/ram/ram7.png",
+      "/images/items/ram/ram8.png",
+      "/images/items/ram/ram9.png",
+      "/images/items/ram/ram10.png",
+      "/images/items/ram/ram-cute.png",
+      "/images/items/ram/ram-pixel.png"
+    ]
   },
   {
     "name": "Reaper",
     "id": "reaper",
     "img": "/images/heroes/reaper.png",
-    "items": []
+    "items": [
+      "/images/items/reaper/reaper1.png",
+      "/images/items/reaper/reaper2.png",
+      "/images/items/reaper/reaper3.png",
+      "/images/items/reaper/reaper4.png",
+      "/images/items/reaper/reaper5.png",
+      "/images/items/reaper/reaper-cute.png",
+      "/images/items/reaper/reaper-pixel.png"
+    ]
   },
   {
     "name": "Reinhardt",
     "id": "reinhardt",
     "img": "/images/heroes/reinhardt.png",
-    "items": []
+    "items": [
+      "/images/items/rein/rein1.png",
+      "/images/items/rein/rein2.png",
+      "/images/items/rein/rein3.png",
+      "/images/items/rein/rein4.png",
+      "/images/items/rein/rein5.png",
+      "/images/items/rein/rein6.png",
+      "/images/items/rein/rein-cute.png",
+      "/images/items/rein/rein-pixel.png"
+    ]
   },
   {
     "name": "Roadhog",
