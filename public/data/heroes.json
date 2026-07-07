@@ -600,91 +600,281 @@
     "name": "Roadhog",
     "id": "roadhog",
     "img": "/images/heroes/roadhog.png",
-    "items": []
+    "items": [
+      "/images/items/roadhog/roadhog1.png",
+      "/images/items/roadhog/roadhog2.png",
+      "/images/items/roadhog/roadhog3.png",
+      "/images/items/roadhog/roadhog4.png",
+      "/images/items/roadhog/roadhog5.png",
+      "/images/items/roadhog/roadhog-gun1.png",
+      "/images/items/roadhog/roadhog-gun2.png",
+      "/images/items/roadhog/roadhog-hook1.png",
+      "/images/items/roadhog/roadhog-hook2.png",
+      "/images/items/roadhog/roadhog-tattoo.png",
+      "/images/items/roadhog/roadhog-tattoo2.png",
+      "/images/items/roadhog/roadhog-cute.png",
+      "/images/items/roadhog/roadhog-pixel.png"
+    ]
   },
   {
     "name": "Shion",
     "id": "shion",
     "img": "/images/heroes/shion.png",
-    "items": []
+    "items": [
+      "/images/items/shion/shion1.png",
+      "/images/items/shion/shion2.png",
+      "/images/items/shion/shion3.png",
+      "/images/items/shion/shion4.png",
+      "/images/items/shion/shion-bike.png",
+      "/images/items/shion/shion-cute.png",
+      "/images/items/shion/shion-pixel.png"
+    ]
   },
   {
     "name": "Sierra",
     "id": "sierra",
     "img": "/images/heroes/sierra.png",
-    "items": []
+    "items": [
+      "/images/items/sierra/sierra1.png",
+      "/images/items/sierra/sierra2.png",
+      "/images/items/sierra/sierra3.png",
+      "/images/items/sierra/sierra4.png",
+      "/images/items/sierra/sierra5.png",
+      "/images/items/sierra/sierra6.png",
+      "/images/items/sierra/sierra-gun.png",
+      "/images/items/sierra/dorothy.png",
+      "/images/items/sierra/dorothy2.png",
+      "/images/items/sierra/dorothy3.png",
+      "/images/items/sierra/sierra-cute.png",
+      "/images/items/sierra/sierra-pixel.png"
+    ]
   },
   {
     "name": "Sigma",
     "id": "sigma",
     "img": "/images/heroes/sigma.png",
-    "items": []
+    "items": [
+      "/images/items/sigma/sigma1.png",
+      "/images/items/sigma/sigma2.png",
+      "/images/items/sigma/sigma3.png",
+      "/images/items/sigma/sigma4.png",
+      "/images/items/sigma/sigma5.png",
+      "/images/items/sigma/sigma-rock1.png",
+      "/images/items/sigma/sigma-rock2.png",
+      "/images/items/sigma/sigma-cute.png",
+      "/images/items/sigma/sigma-pixel.png"
+    ]
   },
   {
     "name": "Sojourn",
     "id": "sojourn",
     "img": "/images/heroes/sojourn.png",
-    "items": []
+    "items": [
+      "/images/items/soj/soj1.png",
+      "/images/items/soj/soj2.png",
+      "/images/items/soj/soj3.png",
+      "/images/items/soj/soj4.png",
+      "/images/items/soj/soj5.png",
+      "/images/items/soj/soj6.png",
+      "/images/items/soj/soj7.png",
+      "/images/items/soj/soj8.png",
+      "/images/items/soj/soj9.png",
+      "/images/items/soj/soj-gun.png",
+      "/images/items/soj/murphy.png",
+      "/images/items/soj/murphy2.png",
+      "/images/items/soj/murphy3.png",
+      "/images/items/soj/croissant.png",
+      "/images/items/soj/tims.png",
+      "/images/items/soj/soj-cute.png",
+      "/images/items/soj/soj-pixel.png"
+    ]
   },
   {
     "name": "Soldier: 76",
     "id": "soldier76",
     "img": "/images/heroes/soldier76.png",
-    "items": []
+    "items": [
+      "/images/items/soldier/soldier1.png",
+      "/images/items/soldier/soldier-mask.png",
+      "/images/items/soldier/soldier2.png",
+      "/images/items/soldier/soldier3.png",
+      "/images/items/soldier/soldier4.png",
+      "/images/items/soldier/soldier5.png",
+      "/images/items/soldier/soldier6.png",
+      "/images/items/soldier/soldier-pad.png",
+      "/images/items/soldier/soldier-gun.png",
+      "/images/items/soldier/soldier-gun2.png",
+      "/images/items/soldier/soldier-cute.png",
+      "/images/items/soldier/soldier-pixel.png"
+    ]
   },
   {
     "name": "Sombra",
     "id": "sombra",
     "img": "/images/heroes/sombra.png",
-    "items": []
+    "items": [
+      "/images/items/sombra/sombra1.png",
+      "/images/items/sombra/sombra2.png",
+      "/images/items/sombra/sombra3.png",
+      "/images/items/sombra/sombra4.png",
+      "/images/items/sombra/sombra5.png",
+      "/images/items/sombra/sombra6.png",
+      "/images/items/sombra/sombra7.png",
+      "/images/items/sombra/sombra-gun.png",
+      "/images/items/sombra/sombra-hack.png",
+      "/images/items/sombra/sombra-hack2.png",
+      "/images/items/sombra/sombra-cute.png",
+      "/images/items/sombra/sombra-pixel.png"
+    ]
   },
   {
     "name": "Symmetra",
     "id": "symmetra",
     "img": "/images/heroes/symmetra.png",
-    "items": []
+    "items": [
+      "/images/items/sym/sym1.png",
+      "/images/items/sym/sym2.png",
+      "/images/items/sym/sym3.png",
+      "/images/items/sym/sym4.png",
+      "/images/items/sym/sym5.png",
+      "/images/items/sym/sym6.png",
+      "/images/items/sym/sym-gun.png",
+      "/images/items/sym/sym-tp.png",
+      "/images/items/sym/sym-tp2.png",
+      "/images/items/sym/sym-turret.png",
+      "/images/items/sym/sym-cute.png",
+      "/images/items/sym/sym-pixel.png"
+    ]
   },
   {
     "name": "Torbjorn",
     "id": "torbjorn",
     "img": "/images/heroes/torbjorn.png",
-    "items": []
+    "items": [
+      "/images/items/torb/torb1.png",
+      "/images/items/torb/torb2.png",
+      "/images/items/torb/torb3.png",
+      "/images/items/torb/torb4.png",
+      "/images/items/torb/torb5.png",
+      "/images/items/torb/torb6.png",
+      "/images/items/torb/torb-gun.png",
+      "/images/items/torb/torb-gun2.png",
+      "/images/items/torb/torb-gun3.png",
+      "/images/items/torb/torb-hammer.png",
+      "/images/items/torb/torb-hammer2.png",
+      "/images/items/torb/torb-turret1.png",
+      "/images/items/torb/torb-turret2.png",
+      "/images/items/torb/torb-turret3.png",
+      "/images/items/torb/torb-turret4.png",
+      "/images/items/torb/torb-turret5.png",
+      "/images/items/torb/torb-turret6.png",
+      "/images/items/torb/torb-cute.png",
+      "/images/items/torb/torb-pixel.png"
+    ]
   },
   {
     "name": "Tracer",
     "id": "tracer",
     "img": "/images/heroes/tracer.png",
-    "items": []
+    "items": [
+      "/images/items/tracer/tracer1.png",
+      "/images/items/tracer/tracer2.png",
+      "/images/items/tracer/tracer3.png",
+      "/images/items/tracer/tracer4.png",
+      "/images/items/tracer/tracer5.png",
+      "/images/items/tracer/tracer-goggles.png",
+      "/images/items/tracer/tracer-gun.png",
+      "/images/items/tracer/tracer-gun2.png",
+      "/images/items/tracer/tracer-pulse.png",
+      "/images/items/tracer/tracer-pulse2.png",
+      "/images/items/tracer/tracer-cute.png",
+      "/images/items/tracer/tracer-pixel.png"
+    ]
   },
   {
     "name": "Vendetta",
     "id": "vendetta",
     "img": "/images/heroes/vendetta.png",
-    "items": []
+    "items": [
+      "/images/items/vendetta/vendetta1.png",
+      "/images/items/vendetta/vendetta2.png",
+      "/images/items/vendetta/vendetta3.png",
+      "/images/items/vendetta/vendetta4.png",
+      "/images/items/vendetta/vendetta-sword.png",
+      "/images/items/vendetta/vendetta-sword2.png",
+      "/images/items/vendetta/vendetta-sword3.png",
+      "/images/items/vendetta/vendetta-cute.png",
+      "/images/items/vendetta/vendetta-pixel.png"
+    ]
   },
   {
     "name": "Venture",
     "id": "venture",
     "img": "/images/heroes/venture.png",
-    "items": []
+    "items": [
+      "/images/items/venture/venture1.png",
+      "/images/items/venture/venture2.png",
+      "/images/items/venture/venture3.png",
+      "/images/items/venture/venture4.png",
+      "/images/items/venture/venture5.png",
+      "/images/items/venture/venture6.png",
+      "/images/items/venture/venture-gun.png",
+      "/images/items/venture/venture-cute.png",
+      "/images/items/venture/venture-pixel.png"
+    ]
   },
   {
     "name": "Widowmaker",
     "id": "widowmaker",
     "img": "/images/heroes/widowmaker.png",
-    "items": []
+    "items": [
+      "/images/items/widow/widow1.png",
+      "/images/items/widow/widow2.png",
+      "/images/items/widow/widow3.png",
+      "/images/items/widow/widow-goggles1.png",
+      "/images/items/widow/widow-goggles2.png",
+      "/images/items/widow/widow-gun.png",
+      "/images/items/widow/widow-gun2.png",
+      "/images/items/widow/widow-gun3.png",
+      "/images/items/widow/widow-venom.png",
+      "/images/items/widow/widow-cute.png",
+      "/images/items/widow/widow-pixel.png"
+    ]
   },
   {
     "name": "Winston",
     "id": "winston",
     "img": "/images/heroes/winston.png",
-    "items": []
+    "items": [
+      "/images/items/winston/winston1.png",
+      "/images/items/winston/winston2.png",
+      "/images/items/winston/winston3.png",
+      "/images/items/winston/winston4.png",
+      "/images/items/winston/winston5.png",
+      "/images/items/winston/winston6.png",
+      "/images/items/winston/winston7.png",
+      "/images/items/winston/winston8.png",
+      "/images/items/winston/banana.png",
+      "/images/items/winston/peanut-butter.png",
+      "/images/items/winston/winston-glasses.png",
+      "/images/items/winston/winston-gun.png",
+      "/images/items/winston/winston-gun2.png",
+      "/images/items/winston/winton.png",
+      "/images/items/winston/winston-cute.png",
+      "/images/items/winston/winston-pixel.png"
+    ]
   },
   {
     "name": "Wrecking Ball",
     "id": "wreckingball",
     "img": "/images/heroes/wreckingball.png",
-    "items": []
+    "items": [
+      "/images/items/wreckingball/ball1.png",
+      "/images/items/wreckingball/ball2.png",
+      "/images/items/wreckingball/ball3.png",
+      "/images/items/wreckingball/ball-cute.png",
+      "/images/items/wreckingball/ball-pixel.png"
+    ]
   },
   {
     "name": "Wuyang",
@@ -709,7 +899,20 @@
     "name": "Zarya",
     "id": "zarya",
     "img": "/images/heroes/zarya.png",
-    "items": []
+    "items": [
+      "/images/items/zarya/zarya1.png",
+      "/images/items/zarya/zarya2.png",
+      "/images/items/zarya/zarya3.png",
+      "/images/items/zarya/zarya4.png",
+      "/images/items/zarya/zarya5.png",
+      "/images/items/zarya/zarya6.png",
+      "/images/items/zarya/zarya7.png",
+      "/images/items/zarya/zarya8.png",
+      "/images/items/zarya/zarya-gun.png",
+      "/images/items/zarya/zarya-gun2.png",
+      "/images/items/zarya/zarya-cute.png",
+      "/images/items/zarya/zarya-pixel.png"
+    ]
   },
   {
     "name": "Zenyatta",
