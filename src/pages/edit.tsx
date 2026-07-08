@@ -118,6 +118,9 @@ const Edit = () => {
               <br />
               <button type="button" className="btn btn-secondary m-2" onClick={() => { goToPlayground() }}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
               <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
+              <br />
+              <br />
+              <p className="fst-italic">This feature is in development and might not work on all devices and browsers</p>
             </div>
         }
       </div>
