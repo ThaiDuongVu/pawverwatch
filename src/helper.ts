@@ -14,7 +14,7 @@ export const randomIntArray = (length: number, min: number, max: number) => {
 };
 
 // Download image from a URI
-export const downloadURI = (uri: string, name: string) => {
+export const downloadFromURI = (uri: string, name: string) => {
   const link = document.createElement("a");
   link.download = name;
   link.href = uri;

@@ -6,7 +6,7 @@ import { KonvaEventObject } from "konva/lib/Node";
 import { Stage as KonvaStage, Layer as KonvaLayer } from "react-konva";
 import ImageItem, { ImageProp } from "./image-item";
 import HeroModal from "./hero-modal";
-import { downloadURI } from "@/helper";
+import { downloadFromURI } from "@/helper";
 
 interface PlaygroundProps {
   baseImageURL: string
@@ -32,7 +32,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     if (!stageRef.current) return;
     setSelectedId(null);
     const uri = stageRef.current.toDataURL();
-    downloadURI(uri, `${exportName === "" ? DEFAULT_EXPORT_NAME : exportName}.png`);
+    downloadFromURI(uri, `${exportName === "" ? DEFAULT_EXPORT_NAME : exportName}.png`);
   }
   const [exportName, setExportName] = useState("");
 

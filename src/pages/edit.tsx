@@ -38,7 +38,7 @@ const Edit = () => {
   const uploadDisplay = () => {
     return (
       <div className="container">
-        <h5 className="text-center"><strong>Upload a base pet photo</strong></h5>
+        <h5 className="text-center">Upload a base pet photo</h5>
         {/* Upload form */}
         <form className="w-75 mx-auto" id="upload-form">
           <input className="form-control" type="file" accept="image/*" id="imageInput" name="imageInput" onChange={onBaseImageChange}></input>
