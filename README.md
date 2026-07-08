@@ -1,4 +1,4 @@
-# Pawverwatch
+# Pawverwatch <img src="/public/icon/icon.png" width="2.5%" />
 
 Quickly turn any pet into your favorite **Overwatch®** heroes.
 
@@ -7,8 +7,6 @@ Quickly turn any pet into your favorite **Overwatch®** heroes.
   <img align="top" src="/public/images/arrow.png" height="50" alt="arrow"/>
   <img src="/public/images/mercy.png" height="200" alt="cat mercy">
 </p>
-
----
 
 ## Guide
 
@@ -26,18 +24,19 @@ How to use **Pawverwatch**
 6. Download using the export tool
 <img src="/public/images/screenshots/8.png" width="400" alt="screenshot5"/>
 
-Video demonstration:
-<video src="public/demo-sub.mp4" width="100%" controls />
+<hr />
 
----
+Video demonstration:
+
+https://github.com/user-attachments/assets/70bce6ff-3deb-44d9-9daa-c3b92ef6377e
 
 ## Features
 
----
-
 ## Tech
 
-**Pawverwatch** is built using **React** and **Next.js**.
----
+**Pawverwatch** is built using **React** and **Next.js**. Hosting is done via **Netlify**
 
 ## Usage
+
+## Contribution
+
