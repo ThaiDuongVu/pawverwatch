@@ -10,8 +10,6 @@
 [[redirects]]
   from = "/*"
   to = "/:splat"
-  status = 200
-  force = true
 
     [redirects.rate_limit]
     window_limit = 100
