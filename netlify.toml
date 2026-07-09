@@ -10,10 +10,11 @@
 [[redirects]]
   from = "/*"
   to = "/:splat"
+  status = 200
     [redirects.rate_limit]
     window_limit = 100
     window_size = 60
-    aggregate_by = ["ip", "domain"]
+    aggregate_by = ["ip"]
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
