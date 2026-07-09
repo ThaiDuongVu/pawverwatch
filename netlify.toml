@@ -14,8 +14,19 @@
   force = true
 
     [redirects.rate_limit]
-    window_limit = 100
-    window_size = 60
+    window_limit = 20
+    window_size = 600
+    aggregate_by = ["ip", "domain"]
+
+[[redirects]]
+  from = "_next/images?*"
+  to = "_next/images?:splat"
+  status = 200
+  force = true
+
+    [redirects.rate_limit]
+    window_limit = 20
+    window_size = 600
     aggregate_by = ["ip", "domain"]
 
 [[plugins]]
