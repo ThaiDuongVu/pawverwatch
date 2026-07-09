@@ -7,5 +7,13 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+    [redirects.rate_limit]
+    window_limit = 100
+    window_size = 60
+    aggregate_by = ["ip", "domain"]
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
