@@ -101,12 +101,28 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   //#endregion
 
+  // Fetch hero data from JSON
   const [heroData, setHeroData] = useState<HeroData[]>([]);
+  useEffect(() => {
+    const controller = new AbortController();
+    const fetchHeroData = async () => {
+      try {
+        const response = await fetch("/data/heroes.json", {
+          signal: controller.signal
+        });
+        const data = await response.json();
+        setHeroData(data);
+      } catch (error) {
+        if (error instanceof Error)
+          console.error(error.message);
+      }
+    };
+    fetchHeroData();
+    return () => { controller.abort(); }
+  }, []);
   const [itemCount, setItemCount] = useState(0);
+
   const heroButtonsDisplay = () => {
-    fetch("/data/heroes.json")
-      .then((res) => res.json())
-      .then((data) => setHeroData(data));
     return (
       <div className="w-75 mx-auto">
         <p><strong>Heroes</strong></p>
