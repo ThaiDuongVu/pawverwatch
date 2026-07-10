@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => {
@@ -8,6 +9,7 @@ const Document = () => {
         {/* TODO: Dark mode */}
         <Main />
         <NextScript />
+        <Footer />
       </body>
     </Html>
   );
