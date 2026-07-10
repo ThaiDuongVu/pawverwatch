@@ -1,6 +1,6 @@
 # pawverwatch <img src="/public/icon/icon.png" width="25" />
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1e60bd92-3ed6-4af5-876a-83664192d3bc/deploy-status)](https://app.netlify.com/projects/pawverwatch/deploys)
+![Vercel Deploy](https://img.shields.io/badge/vercel-deployed-green?style=for-the-badge&logo=vercel&logoColor=white)
 
 Quickly turn any pet into your favorite **Overwatch®** heroes.
 
@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/70bce6ff-3deb-44d9-9daa-c3b92ef6377e
 
 ## Usage
 
-**Pawverwatch** is a front-end application built using **React** and **Next.js**. Hosting is done via **Netlify**. You can run a local version if you have **Node.js** (v26.4.0 or newer) installed.
+**Pawverwatch** is a front-end application built using **React** and **Next.js**. Hosting is done via **Vercel**. You can run a local version if you have **Node.js** (v26.4.0 or newer) installed.
 
 To run **Pawverwatch** locally:
 
