@@ -1,4 +1,4 @@
-# pawverwatch <img src="/public/icon/icon.png" width="25" />
+# pawverwatch <img src="/public/icon/icon.png" width="25" alt="icon" />
 
 ![Vercel Deploy](https://img.shields.io/badge/vercel-deployed-green?style=for-the-badge&logo=vercel&logoColor=white)
 
@@ -30,7 +30,7 @@ How to use **Pawverwatch**
 
 Video demonstration:
 
-https://github.com/user-attachments/assets/70bce6ff-3deb-44d9-9daa-c3b92ef6377e
+<https://github.com/user-attachments/assets/70bce6ff-3deb-44d9-9daa-c3b92ef6377e>
 
 ## Features
 
@@ -47,4 +47,3 @@ To run **Pawverwatch** locally:
 5. You should be able to access the project at <http://localhost:3000>
 
 ## Contribution
-

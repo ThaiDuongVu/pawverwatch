@@ -28,6 +28,9 @@ const NavBar = ({ currentPage }: NavBarProps) => {
             <li className="nav-item">
               <Link className={`nav-link ${currentPage === "demo" ? "active" : ""}`} href="/demo">Demo <i className="bi bi-play-btn-fill"></i></Link>
             </li>
+            <li className="nav-item">
+              <Link className={`nav-link ${currentPage === "devlogs" ? "active" : ""}`} href="/devlogs">Dev Logs <i className="bi bi-terminal-fill"></i></Link>
+            </li>
           </ul>
           {/* Right-aligned items */}
           <ul className="navbar-nav ms-auto">
