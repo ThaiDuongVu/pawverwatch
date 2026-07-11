@@ -55,6 +55,12 @@ const Home = () => {
         <p>I&apos;ve seen enough, let&apos;s
           <span><Link type="button" className="btn btn-warning ms-2" href="/edit">Edit <i className="bi bi-pencil-fill ms-1"></i></Link></span>
         </p>
+
+        <p className="text-body-tertiary fst-italic">
+          This is an unofficial, fan-made, non-profit project inspired by the game <strong>Overwatch®</strong>.
+          <br />
+          <strong>Overwatch®</strong> and all related names, characters, and assets are registered trademarks of <strong>Blizzard Entertainment, Inc</strong>.
+        </p>
       </div>
     </div>
   );
