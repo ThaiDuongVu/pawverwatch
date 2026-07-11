@@ -1,2 +1,4 @@
 TODO:
+- map background
 - image item layer control
+- dev logs
