@@ -15,16 +15,11 @@ Quickly turn any pet picture into your favorite **Overwatch®** heroes.
 How to use **pawverwatch <img src="/public/icon/icon.png" width="15" alt="icon" />**
 
 1. Go to **[pawver.watch](https://pawver.watch)**
-2. Upload a base pet image
-<img src="/public/images/screenshots/3.png" width="400" alt="screenshot1"/>
-3. (Optional) Remove the background from the image
-<img src="/public/images/screenshots/4.png" width="400" alt="screenshot2"/>
-4. Click on a hero, then add the items you want
-<img src="/public/images/screenshots/5.png" width="400" alt="screenshot3"/>
-5. Edit the added items
-<img src="/public/images/screenshots/6.png" width="400" alt="screenshot4"/>
-6. Download using the export tool
-<img src="/public/images/screenshots/8.png" width="400" alt="screenshot5"/>
+2. Upload a base pet image<br/><img src="/public/images/screenshots/3.png" width="400" alt="screenshot1"/>
+3. (Optional) Remove the background from the image<br/><img src="/public/images/screenshots/4.png" width="400" alt="screenshot2"/>
+4. Click on a hero, then add the items you want <br/><img src="/public/images/screenshots/5.png" width="400" alt="screenshot3"/>
+5. Edit the added items <br/><img src="/public/images/screenshots/6.png" width="400" alt="screenshot4"/>
+6. Download using the export tool <br/><img src="/public/images/screenshots/8.png" width="400" alt="screenshot5"/>
 
 <hr />
 
@@ -51,7 +46,7 @@ Video demonstration:
 
 ## Local build 🔨
 
-**pawverwatch <img src="/public/icon/icon.png" width="15" alt="icon" />** is a front-end application built using **[React <img src="/public/images/readme/react.png" width="15" alt="react" />](https://react.dev/)** and **[Next.js <img src="/public/images/readme/nextjs.png" width="15" alt="next" />](https://nextjs.org/)**. Hosting is done via **[Vercel <img src="/public/images/readme/vercel.png" width="15" alt="vercel" />](https://vercel.com/)**. You can run a local version if you have **[Node.js <img src="/public/images/readme/node.png" width="15" alt="node" />](https://nodejs.org/)** (v26.4.0 or newer) installed.
+**pawverwatch <img src="/public/icon/icon.png" width="15" alt="icon" />** is a front-end, serverless application built using **[React <img src="/public/images/readme/react.png" width="15" alt="react" />](https://react.dev/)** and **[Next.js <img src="/public/images/readme/nextjs.png" width="15" alt="next" />](https://nextjs.org/)**. Hosting is done via **[Vercel <img src="/public/images/readme/vercel.png" width="15" alt="vercel" />](https://vercel.com/)**. You can run a local version if you have **[Node.js <img src="/public/images/readme/node.png" width="15" alt="node" />](https://nodejs.org/)** (v26.4.0 or newer) installed.
 
 To run **pawverwatch <img src="/public/icon/icon.png" width="15" alt="icon" />** locally:
 
