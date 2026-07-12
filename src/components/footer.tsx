@@ -14,10 +14,10 @@ const Footer = () => {
             </p>
           </div>
           <div className="col text-end">
-            <a href={tiktokURL} className="p-2 fs-5" target="_blank" aria-label="TikTok"><i className="bi bi-tiktok text-body-tertiary"></i></a>
-            <a href={discordURL} className="p-2 fs-5" target="_blank" aria-label="TikTok"><i className="bi bi-discord text-body-tertiary"></i></a>
-            <a href={twitchURL} className="p-2 fs-5" target="_blank" aria-label="Twitch"><i className="bi bi-twitch text-body-tertiary"></i></a>
-            <a href="mailto:wingnightow@gmail.com" target="_blank" className="p-2 fs-5" aria-label="Email"><i className="bi bi-envelope-fill text-body-tertiary"></i></a>
+            <a href={tiktokURL} className="p-2" target="_blank" aria-label="TikTok"><i className="bi bi-tiktok text-body-tertiary"></i></a>
+            <a href={discordURL} className="p-2" target="_blank" aria-label="TikTok"><i className="bi bi-discord text-body-tertiary"></i></a>
+            <a href={twitchURL} className="p-2" target="_blank" aria-label="Twitch"><i className="bi bi-twitch text-body-tertiary"></i></a>
+            <a href="mailto:wingnightow@gmail.com" target="_blank" className="p-2" aria-label="Email"><i className="bi bi-envelope-fill text-body-tertiary"></i></a>
           </div>
         </div>
       </div>
