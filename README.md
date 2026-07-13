@@ -33,7 +33,7 @@ Video demonstration:
 
 - [x] Image background removal
 - [x] Basic image manipulation (move, rotate, scale)
-- [x] Advanced image manipulation (flip, reset)
+- [x] Advanced image manipulation (flip, reset, duplicate, delete)
 - [x] Hero image items
 - [x] Download image
 
