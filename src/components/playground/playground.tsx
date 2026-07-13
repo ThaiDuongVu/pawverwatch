@@ -121,7 +121,6 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     return () => { controller.abort(); }
   }, []);
   const [itemCount, setItemCount] = useState(0);
-
   const heroButtonsDisplay = () => {
     return (
       <div className="w-75 mx-auto">
@@ -203,7 +202,9 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           {/* Operations */}
           <div className="w-75 mx-auto">
             <strong>Operations</strong>
+            <br />
             <div className="text-center">
+              {/* Flip horizontal button */}
               <button
                 type="button"
                 className="btn btn-secondary m-1"
@@ -219,6 +220,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                 }}>
                 Flip horizontal <i className="bi bi-arrow-left-right ms-1"></i>
               </button>
+              {/* Flip vertical button */}
               <button
                 type="button"
                 className="btn btn-secondary m-1"
@@ -234,6 +236,35 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                 }}>
                 Flip vertical <i className="bi bi-arrow-down-up ms-1"></i>
               </button>
+              {/* Bring to front button */}
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null}
+                onClick={() => {
+                  const imgs = images.slice();
+                  const index = images.findIndex(img => img.id === selectedId);
+                  if (index >= imgs.length - 1) return;
+                  [imgs[index], imgs[index + 1]] = [imgs[index + 1], imgs[index]];
+                  setImages(imgs);
+                }}>
+                Bring forward <i className="bi bi-front ms-1"></i>
+              </button>
+              {/* Bring to back button */}
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId == null}
+                onClick={() => {
+                  const imgs = images.slice();
+                  const index = images.findIndex(img => img.id === selectedId);
+                  if (index <= 0) return;
+                  [imgs[index], imgs[index - 1]] = [imgs[index - 1], imgs[index]];
+                  setImages(imgs);
+                }}>
+                Bring backward <i className="bi bi-back ms-1"></i>
+              </button>
+              {/* Reset button */}
               <button
                 type="button"
                 className="btn btn-secondary m-1"
@@ -251,6 +282,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                 }}>
                 Reset <i className="bi bi-arrow-counterclockwise ms-1"></i>
               </button>
+              {/* Duplicate button */}
               <button
                 type="button"
                 className="btn btn-secondary m-1"
@@ -268,6 +300,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                 }}>
                 Duplicate <i className="bi bi-copy ms-1"></i>
               </button>
+              {/* Delete button */}
               <button
                 type="button"
                 className="btn btn-secondary m-1"
@@ -292,11 +325,13 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
             <div id="imgNameHelp" className="form-text">Name your edit before saving</div>
             <br />
             <div className="text-center">
+              {/* Save button */}
               <button
                 type="button"
                 className="btn btn-primary m-1" >
                 Save <i className="bi bi-bookmark-fill ms-1"></i>
               </button>
+              {/* Download button */}
               <button
                 type="button"
                 className="btn btn-success m-1"
