@@ -1,4 +1,4 @@
-### **First dev log**
+### **First dev log 🎉**
 
 `July 11th, 2026`
 
