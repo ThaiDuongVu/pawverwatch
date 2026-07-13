@@ -107,9 +107,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     const controller = new AbortController();
     const fetchHeroData = async () => {
       try {
-        const response = await fetch("/data/heroes.json", {
-          signal: controller.signal
-        });
+        const response = await fetch("/data/heroes.json", { signal: controller.signal });
         const data = await response.json();
         setHeroData(data);
       } catch (error) {
