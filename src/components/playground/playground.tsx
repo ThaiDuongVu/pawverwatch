@@ -24,7 +24,8 @@ interface HeroData {
 interface ModeData {
   name: string,
   id: string,
-  img: string
+  img: string,
+  maps: []
 }
 
 const DEFAULT_EXPORT_NAME = "paw";
@@ -110,7 +111,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   //#endregion
 
-  // Fetch hero data from JSON
+  // #region Fetch hero data from JSON
+
   const [heroData, setHeroData] = useState<HeroData[]>([]);
   useEffect(() => {
     const controller = new AbortController();
@@ -164,7 +166,10 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
     );
   }
 
-  // Fetch map data from JSON
+  // #endregion
+
+  // #region Fetch map data from JSON
+
   const [modeData, setModeData] = useState<ModeData[]>([]);
   useEffect(() => {
     const controller = new AbortController();
@@ -200,8 +205,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                   id={`${mode.id}Modal`}
                   name={mode.name}
                   icon={mode.img}
-                  onMapClicked={() => {
-                  }}
+                  maps={mode.maps}
+                  onMapClicked={(map) => { setBackgroundSrc(map) }}
                 />
                 <br />
               </div>
@@ -212,12 +217,14 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
         <button
           type="button"
           className="btn btn-danger m-1"
-          onClick={() => {setBackgroundSrc("")}}>
+          onClick={() => { setBackgroundSrc("") }}>
           None <i className="bi bi-ban-fill ms-1"></i>
         </button>
       </div>
     );
   }
+
+  // #endregion
 
   return (
     <div>

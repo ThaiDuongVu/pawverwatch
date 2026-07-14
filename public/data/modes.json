@@ -2,31 +2,48 @@
   {
     "name": "Control",
     "id": "control",
-    "img": "/images/modes/control.png"
+    "img": "/images/modes/control.png",
+    "maps": [
+      "/images/maps/antartic-peninsula.png",
+      "/images/maps/busan.png",
+      "/images/maps/gladius.png",
+      "/images/maps/gogadoro.png",
+      "/images/maps/ilios.png",
+      "/images/maps/lijiang-tower.png",
+      "/images/maps/nepal.png",
+      "/images/maps/oasis.png",
+      "/images/maps/samoa.png",
+      "/images/maps/wuxing-university.png"
+    ]
   },
   {
     "name": "Escort",
     "id": "escort",
-    "img": "/images/modes/escort.png"
+    "img": "/images/modes/escort.png",
+    "maps": []
   },
   {
     "name": "Flashpoint",
     "id": "flashpoint",
-    "img": "/images/modes/flashpoint.png"
+    "img": "/images/modes/flashpoint.png",
+    "maps": []
   },
   {
     "name": "Hybrid",
     "id": "hybrid",
-    "img": "/images/modes/hybrid.png"
+    "img": "/images/modes/hybrid.png",
+    "maps": []
   },
   {
     "name": "Push",
     "id": "push",
-    "img": "/images/modes/push.png"
+    "img": "/images/modes/push.png",
+    "maps": []
   },
   {
     "name": "Clash",
     "id": "clash",
-    "img": "/images/modes/clash.png"
+    "img": "/images/modes/clash.png",
+    "maps": []
   }
 ]
