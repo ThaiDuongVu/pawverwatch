@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Control",
+    "id": "control",
+    "img": "/images/modes/control.png"
+  },
+  {
+    "name": "Escort",
+    "id": "escort",
+    "img": "/images/modes/escort.png"
+  },
+  {
+    "name": "Flashpoint",
+    "id": "flashpoint",
+    "img": "/images/modes/flashpoint.png"
+  },
+  {
+    "name": "Hybrid",
+    "id": "hybrid",
+    "img": "/images/modes/hybrid.png"
+  },
+  {
+    "name": "Push",
+    "id": "push",
+    "img": "/images/modes/push.png"
+  },
+  {
+    "name": "Clash",
+    "id": "clash",
+    "img": "/images/modes/clash.png"
+  }
+]

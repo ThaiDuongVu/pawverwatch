@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "control",
+    "maps": [
+      "/images/maps/antartic-peninsula.png",
+      "/images/maps/busan.png",
+      "/images/maps/gladius.png",
+      "/images/maps/gogadoro.png",
+      "/images/maps/ilios.png",
+      "/images/maps/lijiang-tower.png",
+      "/images/maps/nepal.png",
+      "/images/maps/oasis.png",
+      "/images/maps/samoa.png",
+      "/images/maps/wuxing-university.png"
+    ]
+  }
+]
