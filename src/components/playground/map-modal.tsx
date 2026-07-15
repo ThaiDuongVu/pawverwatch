@@ -14,7 +14,7 @@ const MapModal = ({ name, id, icon, maps, onMapClicked }: MapModaProps) => {
     if (!map || map === "") return <div></div>
     return (
       <button type="button" className="btn btn-secondary shadow-lg m-1" title={`${name} map`} onClick={() => onMapClicked(map)}>
-        <Image className="img-fluid" src={map} alt={`${name} item`} width={200} height={200} loading="lazy" />
+        <Image className="img-fluid" src={map} alt={`${name} item`} width={400} height={400} loading="lazy" />
       </button>
     );
   }
@@ -26,8 +26,8 @@ const MapModal = ({ name, id, icon, maps, onMapClicked }: MapModaProps) => {
       const map2 = maps[i + 1];
       rows = [...rows,
       <div className="row" key={`itemRow${i}`}>
-        <div className="col">{mapButton(map1)}</div>
-        <div className="col">{mapButton(map2)}</div>
+        <div className="col-6">{mapButton(map1)}</div>
+        <div className="col-6">{mapButton(map2)}</div>
       </div>
       ]
     }
@@ -36,7 +36,7 @@ const MapModal = ({ name, id, icon, maps, onMapClicked }: MapModaProps) => {
 
   return (
     <div className="modal fade" id={id} tabIndex={-1} aria-labelledby={`${id}ModalLabel`}>
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header bg-body-tertiary">
             <h5 className="modal-title" id={`${id}ModalLabel`}><strong>{name} maps</strong></h5>
