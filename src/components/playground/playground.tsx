@@ -197,7 +197,7 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
             return (
               <div key={mode.id}>
                 <button type="button" className="w-75 btn btn-info p-1 m-1" title={`${mode.name}`} data-bs-toggle="modal" data-bs-target={`#${mode.id}Modal`}>
-                  <Image className="img-fluid rounded" src={`${mode.img}`} alt={`${mode.name}`} width={50} height={50} loading="lazy" />
+                  <Image className="img-fluid rounded" src={`${mode.img}`} alt={`${mode.name}`} width={40} height={40} loading="lazy" />
                   <br />
                   {mode.name}
                 </button>

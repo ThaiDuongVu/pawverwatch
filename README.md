@@ -34,15 +34,16 @@ Video demonstration:
 - [x] Image background removal
 - [x] Basic image manipulation (move, rotate, scale)
 - [x] Advanced image manipulation (flip, reset, duplicate, delete)
+- [x] Image layer control
+- [x] Map background
 - [x] Hero image items
 - [x] Download image
 
 ### TODO 🔁
 
 - [ ] Save image to favorites
-- [ ] Map background
-- [ ] Image layer control
 - [ ] Dark/light theme
+- [ ] Mobile support (maybe)
 
 ## Local build 🔨
 

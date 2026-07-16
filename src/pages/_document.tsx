@@ -5,10 +5,13 @@ const Document = () => {
   return (
     <Html lang="en" data-scroll-behavior="smooth">
       <Head />
-      <body data-bs-theme="light">
+      <body data-bs-theme="light" className="d-flex flex-column min-vh-100">
         {/* TODO: Dark mode */}
-        <Main />
-        <NextScript />
+        <main className="flex-grow-1">
+          <Main />
+          <NextScript />
+        </main>
+        <br />
         <Footer />
       </body>
     </Html>

@@ -4,7 +4,7 @@ const Footer = () => {
   const discordURL = "https://discord.gg/p94gYf8vsM";
 
   return (
-    <footer className="footer fixed-bottom mt-auto mb-2 bg-body-tertiary">
+    <footer className="footer mt-auto bg-body-tertiary">
       <br />
       <div className="container">
         <div className="row">
