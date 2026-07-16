@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Control",
+    "id": "control",
+    "img": "/images/modes/control.png",
+    "maps": [
+      "/images/maps/control/antartic-peninsula.png",
+      "/images/maps/control/busan.png",
+      "/images/maps/control/gladius.png",
+      "/images/maps/control/gogadoro.png",
+      "/images/maps/control/ilios.png",
+      "/images/maps/control/lijiang-tower.png",
+      "/images/maps/control/nepal.png",
+      "/images/maps/control/oasis.png",
+      "/images/maps/control/samoa.png",
+      "/images/maps/control/wuxing-university.png"
+    ]
+  },
+  {
+    "name": "Escort",
+    "id": "escort",
+    "img": "/images/modes/escort.png",
+    "maps": [
+      "/images/maps/escort/circuit.png",
+      "/images/maps/escort/dorado.png",
+      "/images/maps/escort/gibraltar.png",
+      "/images/maps/escort/havana.png",
+      "/images/maps/escort/junkertown.png",
+      "/images/maps/escort/rialto.png",
+      "/images/maps/escort/route-66.png",
+      "/images/maps/escort/shambali.png"
+    ]
+  },
+  {
+    "name": "Flashpoint",
+    "id": "flashpoint",
+    "img": "/images/modes/flashpoint.png",
+    "maps": [
+      "/images/maps/flashpoint/aatlis.png",
+      "/images/maps/flashpoint/new-junk-city.png",
+      "/images/maps/flashpoint/suravasa.png"
+    ]
+  },
+  {
+    "name": "Hybrid",
+    "id": "hybrid",
+    "img": "/images/modes/hybrid.png",
+    "maps": [
+      "/images/maps/hybrid/blizzard-world.png",
+      "/images/maps/hybrid/eichenslop.png",
+      "/images/maps/hybrid/hollywood.png",
+      "/images/maps/hybrid/kings-row.png",
+      "/images/maps/hybrid/midtown.png",
+      "/images/maps/hybrid/neon-junction.png",
+      "/images/maps/hybrid/numbani.png",
+      "/images/maps/hybrid/paraiso.png"
+    ]
+  },
+  {
+    "name": "Push",
+    "id": "push",
+    "img": "/images/modes/push.png",
+    "maps": [
+      "/images/maps/push/colosseo.png",
+      "/images/maps/push/esparanca.png",
+      "/images/maps/push/new-queen-street.png",
+      "/images/maps/push/place-lacroix.png",
+      "/images/maps/push/red-wood-dam.png",
+      "/images/maps/push/runasapi.png"
+    ]
+  },
+  {
+    "name": "Clash",
+    "id": "clash",
+    "img": "/images/modes/clash.png",
+    "maps": [
+      "/images/maps/clash/hanaoka.png",
+      "/images/maps/clash/throne-of-anubis.png"
+    ]
+  },
+  {
+    "name": "Assault (2CP)",
+    "id": "assault",
+    "img": "/images/modes/assault.png",
+    "maps": [
+      "/images/maps/assault/hanamura.png",
+      "/images/maps/assault/horizon-lunar-colony.png",
+      "/images/maps/assault/paris.png",
+      "/images/maps/assault/temple-of-anubis.png",
+      "/images/maps/assault/volskaya-industries.png"
+    ]
+  }
+]

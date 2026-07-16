@@ -3,10 +3,12 @@ import { useEffect, useState, useRef } from "react";
 import { Stage } from "konva/lib/Stage";
 import { Layer } from "konva/lib/Layer";
 import { KonvaEventObject } from "konva/lib/Node";
-import { Stage as KonvaStage, Layer as KonvaLayer } from "react-konva";
+import { Stage as KonvaStage, Layer as KonvaLayer, Image as KonvaImage } from "react-konva";
 import ImageItem, { ImageProp } from "./image-item";
 import HeroModal from "./hero-modal";
+import MapModal from "./map-modal";
 import { downloadFromURI } from "@/helper";
+import useImage from "use-image";
 
 interface PlaygroundProps {
   baseImageURL: string
@@ -19,11 +21,19 @@ interface HeroData {
   items: []
 }
 
+interface ModeData {
+  name: string,
+  id: string,
+  img: string,
+  maps: []
+}
+
 const DEFAULT_EXPORT_NAME = "paw";
 
 const Playground = ({ baseImageURL }: PlaygroundProps) => {
   const stageRef = useRef<Stage>(null);
-  const layerRef = useRef<Layer>(null);
+  const backgroundLayerRef = useRef<Layer>(null);
+  const imageLayerRef = useRef<Layer>(null);
   const containerRef = useRef(null);
 
   // #region Handle image exporting/downloading
@@ -101,7 +111,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   //#endregion
 
-  // Fetch hero data from JSON
+  // #region Fetch hero data from JSON
+
   const [heroData, setHeroData] = useState<HeroData[]>([]);
   useEffect(() => {
     const controller = new AbortController();
@@ -152,8 +163,68 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           })
         }
       </div>
-    )
-  };
+    );
+  }
+
+  // #endregion
+
+  // #region Fetch map data from JSON
+
+  const [modeData, setModeData] = useState<ModeData[]>([]);
+  useEffect(() => {
+    const controller = new AbortController();
+    const fetchHeroData = async () => {
+      try {
+        const response = await fetch("/data/modes.json", { signal: controller.signal });
+        const data = await response.json();
+        setModeData(data);
+      } catch (error) {
+        if (error instanceof Error)
+          console.error(error.message);
+      }
+    };
+    fetchHeroData();
+    return () => { controller.abort(); }
+  }, []);
+  const [backgroundSrc, setBackgroundSrc] = useState("");
+  const [background] = useImage(backgroundSrc, "anonymous");
+  const mapButtonsDisplay = () => {
+    return (
+      <div className="mx-auto">
+        <p><strong>Maps</strong></p>
+        {
+          modeData.map((mode) => {
+            return (
+              <div key={mode.id}>
+                <button type="button" className="w-75 btn btn-info p-1 m-1" title={`${mode.name}`} data-bs-toggle="modal" data-bs-target={`#${mode.id}Modal`}>
+                  <Image className="img-fluid rounded" src={`${mode.img}`} alt={`${mode.name}`} width={40} height={40} loading="lazy" />
+                  <br />
+                  {mode.name}
+                </button>
+                <MapModal
+                  id={`${mode.id}Modal`}
+                  name={mode.name}
+                  icon={mode.img}
+                  maps={mode.maps}
+                  onMapClicked={(map) => { setBackgroundSrc(map) }}
+                />
+                <br />
+              </div>
+            );
+          })
+        }
+        {/* No background */}
+        <button
+          type="button"
+          className="btn btn-danger m-1"
+          onClick={() => { setBackgroundSrc("") }}>
+          None <i className="bi bi-ban-fill ms-1"></i>
+        </button>
+      </div>
+    );
+  }
+
+  // #endregion
 
   return (
     <div>
@@ -163,11 +234,27 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           {/* Hero buttons */}
           {heroButtonsDisplay()}
         </div>
-        <div className="col-8 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
+        <div className="col-1 text-center h-100 overflow-auto">
+          {/* Maps buttons */}
+          {mapButtonsDisplay()}
+        </div>
+        <div className="col-7 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
           <KonvaStage ref={stageRef} width={dimensions.width} height={dimensions.height} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
-            <KonvaLayer ref={layerRef}>
+            {/* Draw background */}
+            <KonvaLayer ref={backgroundLayerRef}>
+              <KonvaImage
+                image={background}
+                x={0}
+                y={0}
+                width={dimensions.width}
+                height={dimensions.height}
+                listening={false}
+                draggable={false}
+              />
+            </KonvaLayer>
+            {/* Draw all images in array */}
+            <KonvaLayer ref={imageLayerRef}>
               {
-                // Draw all images in array
                 images.map((img, index) => {
                   return <ImageItem
                     key={index}

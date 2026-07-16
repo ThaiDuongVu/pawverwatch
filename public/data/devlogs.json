@@ -1,4 +1,11 @@
 [
-  { "path": "/devlogs/devlog2.md" },
-  { "path": "/devlogs/devlog1.md" }
+  {
+    "path": "/devlogs/devlog3.md"
+  },
+  {
+    "path": "/devlogs/devlog2.md"
+  },
+  {
+    "path": "/devlogs/devlog1.md"
+  }
 ]
