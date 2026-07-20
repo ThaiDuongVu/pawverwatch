@@ -22,3 +22,11 @@ export const downloadFromURI = (uri: string, name: string) => {
   link.click();
   document.body.removeChild(link);
 }
+
+// Show a bootstrap toast
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const showToast = (bootstrap: any, id: string) => {
+  const element = document.getElementById(id);
+  const toast = bootstrap.Toast.getOrCreateInstance(element);
+  toast.show();
+};

@@ -1,6 +1,5 @@
 import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
-import Placeholder from "@/components/placeholder";
 
 const Favorites = () => {
   return (
@@ -10,7 +9,6 @@ const Favorites = () => {
       <br />
 
       <div className="container text-center">
-        <Placeholder />
       </div>
     </div>
   );
