@@ -19,7 +19,7 @@ const HeroModal = ({ id, name, icon, items, onItemClicked }: HeroModalProps) => 
     );
   }
 
-  const itemGrid = () => {
+  const itemsGrid = () => {
     let rows: ReactElement[] = [];
     for (let i = 0; i < items.length; i += 2) {
       const item1 = items[i];
@@ -44,7 +44,7 @@ const HeroModal = ({ id, name, icon, items, onItemClicked }: HeroModalProps) => 
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            {itemGrid()}
+            {itemsGrid()}
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-warning" data-bs-dismiss="modal">Done <i className="bi bi-check-circle-fill ms-1"></i></button>

@@ -30,3 +30,10 @@ export const showToast = (bootstrap: any, id: string) => {
   const toast = bootstrap.Toast.getOrCreateInstance(element);
   toast.show();
 };
+
+export const removeStringFromArray = (element: string, array: string[]) => {
+  const index = array.indexOf(element);
+  if (index === -1) return array;
+  array.splice(index, 1);
+  return array;
+};

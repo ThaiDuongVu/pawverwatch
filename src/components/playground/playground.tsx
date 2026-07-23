@@ -11,6 +11,7 @@ import { downloadFromURI } from "@/helper";
 import useImage from "use-image";
 import { showToast } from "@/helper";
 import Toast from "@/components/toast";
+import { FAVORITES_KEY } from "@/pages/favorites";
 
 interface PlaygroundProps {
   baseImageURL: string
@@ -234,6 +235,23 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   // #endregion
 
+  // #region Add edit to favorites
+
+  const saveToFavorites = () => {
+    if (!stageRef.current) return;
+
+    // Save to local storage
+    setSelectedId(null);
+    const uri = stageRef.current.toDataURL();
+    const favorites = localStorage.getItem(FAVORITES_KEY) ?? "";
+    localStorage.setItem(FAVORITES_KEY, `${favorites};${uri}`);
+
+    // Show message
+    showToast(bootstrap, "savedToast");
+  };
+
+  // #endregion
+
   return (
     <div>
       {/* Main edit display */}
@@ -421,7 +439,9 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
               {/* Save button */}
               <button
                 type="button"
-                className="btn btn-primary m-1" >
+                className="btn btn-primary m-1"
+                onClick={saveToFavorites}
+              >
                 Save <i className="bi bi-bookmark-fill ms-1"></i>
               </button>
               {/* Download button */}
