@@ -38,10 +38,10 @@ Video demonstration:
 - [x] Map background
 - [x] Hero image items
 - [x] Download image
+- [x] Save image to favorites
 
 ### TODO 🔁
 
-- [ ] Save image to favorites
 - [ ] Dark/light theme
 - [ ] Mobile support (maybe)
 
