@@ -3,10 +3,9 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => {
   return (
-    <Html lang="en" data-scroll-behavior="smooth">
+    <Html lang="en" id="html" data-scroll-behavior="smooth">
       <Head />
-      <body data-bs-theme="light" className="d-flex flex-column min-vh-100">
-        {/* TODO: Dark mode */}
+      <body className="d-flex flex-column min-vh-100">
         <main className="flex-grow-1">
           <Main />
           <NextScript />
