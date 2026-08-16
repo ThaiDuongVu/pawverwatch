@@ -136,6 +136,18 @@
     ]
   },
   {
+    "name": "D.Mon",
+    "id": "dmon",
+    "img": "/images/heroes/dmon.png",
+    "items": [
+      "/images/items/dmon/dmon1.png",
+      "/images/items/dmon/dmon2.png",
+      "/images/items/dmon/dmon3.png",
+      "/images/items/dmon/dmon4.png",
+      "/images/items/dmon/dmon5.png"
+    ]
+  },
+  {
     "name": "Domina",
     "id": "domina",
     "img": "/images/heroes/domina.png",

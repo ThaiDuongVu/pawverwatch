@@ -39,11 +39,13 @@ Video demonstration:
 - [x] Hero image items
 - [x] Download image
 - [x] Save image to favorites
+- [x] Dark/light theme
 
 ### TODO 🔁
 
-- [ ] Dark/light theme
 - [ ] Mobile support (maybe)
+- [ ] Manual background removal mode
+- New heroes
 
 ## Local build 🔨
 
