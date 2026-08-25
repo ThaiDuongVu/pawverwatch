@@ -5,8 +5,10 @@ import NavBar from "@/components/navbar";
 import DefaultHead from "@/components/default-head";
 import CustomModal from "@/components/custom-modal";
 import Playground from "@/components/playground/playground";
+import { useIsMobile } from "@/useIsMobile";
 
 const Edit = () => {
+  const isMobile = useIsMobile();
   const [editState, setEditState] = useState("upload");
   // Edit process:
   // 1. upload
@@ -38,6 +40,19 @@ const Edit = () => {
   const uploadDisplay = () => {
     return (
       <div className="container">
+        {/* Mobile prompt */}
+        {
+          isMobile
+            ?
+            <div>
+              <p className="text-body-tertiary fst-italic text-center">
+                Looks like you&apos;re using <strong>Pawverwatch</strong> on a mobile device, I recommend turning the device to landscape mode for the best experience.
+              </p>
+            </div>
+            :
+            <div></div>
+        }
+
         <h5 className="text-center">Upload a base pet photo</h5>
         {/* Upload form */}
         <form className="w-75 mx-auto" id="upload-form">
@@ -108,6 +123,7 @@ const Edit = () => {
             :
             // Remove background prompt
             <div className="text-center">
+              <p className="text-body-tertiary fst-italic">This feature is <strong>experimental</strong> and might not work on all devices and browsers</p>
               <h5><strong>Remove background?</strong></h5>
               <p>
                 Would you like to remove the background from the photo before editing?
@@ -118,9 +134,6 @@ const Edit = () => {
               <br />
               <button type="button" className="btn btn-secondary m-2" onClick={() => { goToPlayground() }}>Nah <i className="bi bi-hand-thumbs-down-fill ms-1"></i></button>
               <button type="button" className="btn btn-warning m-2" onClick={removeBG}>Sure <i className="bi bi-hand-thumbs-up-fill ms-1"></i></button>
-              <br />
-              <br />
-              <p className="fst-italic">This feature is in development and might not work on all devices and browsers</p>
             </div>
         }
       </div>
