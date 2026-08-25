@@ -5,6 +5,7 @@ const KofiWidget = () => {
     const script = document.createElement("script");
     script.src = "https://storage.ko-fi.com/cdn/scripts/overlay-widget.js";
     script.async = true;
+    script.crossOrigin = "anonymous";
 
     script.onload = () => {
       window.kofiWidgetOverlay.draw("wingnight", {
