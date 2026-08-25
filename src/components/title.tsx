@@ -6,7 +6,7 @@ const Title = () => {
   const themeSet = useRef(false);
   useEffect(() => {
     if (!themeSet.current)
-      setTheme(getCookie("theme"));
+      setTheme(getCookie("theme") ?? "light");
     return () => { themeSet.current = true; }
   }, [])
   return <strong>
