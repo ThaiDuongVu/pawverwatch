@@ -57,9 +57,16 @@ const Home = () => {
         </p>
 
         <p className="text-body-tertiary fst-italic">
-          This is an unofficial, fan-made, non-profit project inspired by the game <strong>Overwatch®</strong>.
+          This is an unofficial, fan-made project inspired by the game <strong>Overwatch®</strong>.
           <br />
           <strong>Overwatch®</strong> and all related names, characters, and assets are registered trademarks of <strong>Blizzard Entertainment, Inc</strong>.
+
+          <br />
+          <br />
+
+          If you like what you see, consider supporting this project
+          <br />
+          <iframe id="kofiframe" src="https://ko-fi.com/wingnight/?hidefeed=true&widget=true&embed=true&preview=true" style={{border: "none", width: "100%", padding: "4px"}} height="712" title="wingnight"></iframe>
         </p>
       </div>
     </div>
