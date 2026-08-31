@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import DefaultHead from "@/components/default-head";
 import { useEffect, useRef, useState } from "react";
 import { randomIntArray } from "@/helper";
+import KofiWidget from "@/components/kofi-widget";
 
 const Home = () => {
   // Load example images
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <div>
+      <KofiWidget />
       <DefaultHead />
       <NavBar currentPage="home" />
       <br />

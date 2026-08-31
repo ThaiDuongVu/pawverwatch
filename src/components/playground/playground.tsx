@@ -12,6 +12,7 @@ import useImage from "use-image";
 import { showToast } from "@/helper";
 import Toast from "@/components/toast";
 import { FAVORITES_KEY } from "@/pages/favorites";
+import Watermark from "../watermark";
 
 interface PlaygroundProps {
   baseImageURL: string
@@ -252,6 +253,12 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   // #endregion
 
+  // #region Handle watermark
+
+  const [watermarkChecked, setWatermarkChecked] = useState(true);
+
+  // #endregion
+
   return (
     <div>
       {/* Main edit display */}
@@ -305,6 +312,8 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                     }} />
                 })
               }
+              {/* Draw watermark (if checked) */}
+              {watermarkChecked ? <Watermark /> : <></>}
             </KonvaLayer>
           </KonvaStage>
         </div>
@@ -425,6 +434,19 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           {/* Exporting */}
           <div className="w-75 mx-auto">
             <strong>Exporting</strong>
+            <br />
+            <div className="form-check form-switch mt-2 mb-2">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                defaultChecked
+                onChange={(event) => { setWatermarkChecked(event.target.checked) }}
+                id="watermarkCheck" />
+              <label className="form-check-label" htmlFor="watermarkCheck">
+                <span className="form-text">Watermark</span>
+              </label>
+            </div>
+            {/* <br /> */}
             <input
               type="text"
               className="form-control"

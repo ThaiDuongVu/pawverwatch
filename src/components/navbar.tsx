@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Title from "./title";
 import Icon from "./icon";
-import KofiWidget from "@/components/kofi-widget";
 
 type NavBarProps = {
   currentPage: string;
@@ -10,7 +9,6 @@ type NavBarProps = {
 const NavBar = ({ currentPage }: NavBarProps) => {
   return (
     <div>
-      <KofiWidget />
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           {/* Brand */}
