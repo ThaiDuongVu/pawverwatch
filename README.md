@@ -43,8 +43,10 @@ Video demonstration:
 
 ### TODO 🔁
 
-- [ ] Mobile support (maybe)
+- [ ] Simple drawing
+- [ ] Light video editing
 - [ ] Manual background removal mode
+- [ ] Mobile support (maybe)
 - New heroes
 
 ## Local build 🔨
