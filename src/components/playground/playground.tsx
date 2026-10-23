@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Stage } from "konva/lib/Stage";
 import { Layer } from "konva/lib/Layer";
 import { KonvaEventObject } from "konva/lib/Node";
-import { Stage as KonvaStage, Layer as KonvaLayer, Image as KonvaImage } from "react-konva";
+import { Stage as KonvaStage, Layer as KonvaLayer, Image as KonvaImage, Line as KonvaLine } from "react-konva";
 import ImageItem, { ImageProp } from "./image-item";
 import HeroModal from "./hero-modal";
 import MapModal from "./map-modal";
@@ -30,6 +30,13 @@ interface ModeData {
   id: string,
   img: string,
   maps: []
+}
+
+interface LineData {
+  tool: string,
+  points: [],
+  strokeWidth: number,
+  strokeColor: string
 }
 
 const DEFAULT_EXPORT_NAME = "paw";
@@ -259,6 +266,43 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
 
   // #endregion
 
+  // #region Handle simple manual drawing
+
+  const [tool, setTool] = useState("");
+  const [lines, setLines] = useState<any>([]);
+  const [strokeWidth, setStrokeWidth] = useState(5);
+  const [strokeColor, setStrokeColor] = useState("#ffc107");
+  const isDrawing = useRef(false);
+
+  const handleMouseDown = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
+    isDrawing.current = true;
+    const stage = event.target.getStage();
+    const position = stage?.getPointerPosition();
+    setLines([...lines, { tool, points: [position?.x, position?.y], strokeWidth: strokeWidth, strokeColor: strokeColor }]);
+  };
+
+  const handleMouseMove = (event: KonvaEventObject<MouseEvent> | KonvaEventObject<TouchEvent>) => {
+    // No drawing
+    if (!isDrawing.current) {
+      return;
+    }
+
+    // Add point
+    const stage = event.target.getStage();
+    const point = stage?.getPointerPosition();
+    let lastLine = lines[lines.length - 1];
+    lastLine.points = lastLine.points.concat([point?.x, point?.y]);
+
+    // Replace last
+    lines.splice(lines.length - 1, 1, lastLine);
+    setLines(lines.concat());
+  };
+
+  const handleMouseUp = () => {
+    isDrawing.current = false;
+  };
+
+  // #endregion
   return (
     <div>
       {/* Main edit display */}
@@ -272,7 +316,16 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
           {mapButtonsDisplay()}
         </div>
         <div className="col-7 border border-warning border-4 rounded bg-body-secondary" ref={containerRef}>
-          <KonvaStage ref={stageRef} width={dimensions.width} height={dimensions.height} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
+          <KonvaStage
+            ref={stageRef}
+            width={dimensions.width}
+            height={dimensions.height}
+            onMouseDown={tool === "" ? checkDeselect : handleMouseDown}
+            onMousemove={handleMouseMove}
+            onMouseup={handleMouseUp}
+            onTouchStart={tool === "" ? checkDeselect : handleMouseDown}
+            onTouchMove={handleMouseMove}
+            onTouchEnd={handleMouseUp}>
             {/* Draw background */}
             <KonvaLayer ref={backgroundLayerRef}>
               <KonvaImage
@@ -312,6 +365,21 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
                     }} />
                 })
               }
+              {/* Draw user lines */}
+              {lines.map((line: LineData, index: number) => (
+                <KonvaLine
+                  key={index}
+                  points={line.points}
+                  stroke={line.strokeColor}
+                  strokeWidth={line.strokeWidth}
+                  tension={0.5}
+                  lineCap="round"
+                  lineJoin="round"
+                  globalCompositeOperation={
+                    line.tool === "eraser" ? "destination-out" : "source-over"
+                  }
+                />
+              ))}
               {/* Draw watermark (if checked) */}
               {watermarkChecked ? <Watermark /> : <></>}
             </KonvaLayer>
@@ -319,8 +387,72 @@ const Playground = ({ baseImageURL }: PlaygroundProps) => {
         </div>
         <div className="col-3 h-100 overflow-auto">
           {/* Side buttons */}
-          {/* Operations */}
           <div className="w-75 mx-auto">
+            {/* Drawing */}
+            <strong>Drawing</strong>
+            <br />
+            <div className="text-center">
+              {/* Exit draw mode button */}
+              <button
+                type="button"
+                className={`btn m-1 ${tool === "" ? "btn-warning" : "btn-secondary"}`}
+                disabled={selectedId != null}
+                onClick={() => setTool("")}>
+                None <i className="bi bi-ban-fill ms-1"></i>
+              </button>
+              {/* Enter draw mode button */}
+              <button
+                type="button"
+                className={`btn m-1 ${tool === "pen" ? "btn-warning" : "btn-secondary"}`}
+                disabled={selectedId != null}
+                onClick={() => setTool("pen")}>
+                Draw <i className="bi bi-pencil-fill ms-1"></i>
+              </button>
+              {/* Enter eraser mode button */}
+              <button
+                type="button"
+                className={`btn m-1 ${tool === "eraser" ? "btn-warning" : "btn-secondary"}`}
+                disabled={selectedId != null}
+                onClick={() => setTool("eraser")}>
+                Erase <i className="bi bi-eraser-fill ms-1"></i>
+              </button>
+              {/* Erase all lines button */}
+              <button
+                type="button"
+                className="btn btn-secondary m-1"
+                disabled={selectedId != null}
+                onClick={() => setLines([])}>
+                Erase All <i className="bi bi-trash-fill ms-1 text-danger"></i>
+              </button>
+              <hr />
+              {/* Customize stroke width */}
+              <div>
+                <label htmlFor="strokeWidthRange" className="form-label">Stroke width: <strong>{strokeWidth}</strong></label>
+                <div className="form-range" data-bs-bubble>
+                  <input
+                    type="range"
+                    className="form-range-input"
+                    min={1} max={10} step={0.1}
+                    defaultValue={strokeWidth}
+                    onChange={(event) => { setStrokeWidth(Number(event.target.value)) }}
+                    id="strokeWidthRange" />
+                </div>
+              </div>
+              <hr />
+              {/* Stroke color picker */}
+              <div>
+                <label htmlFor="strokeColorPicker" className="form-label">Color picker</label>
+                <input
+                  type="color"
+                  className="form-control form-control-color"
+                  id="strokeColorPicker"
+                  defaultValue="#ffc107"
+                  onChange={(event) => { setStrokeColor(event.target.value) }}
+                  title="Choose a color" />
+              </div>
+            </div>
+            <hr />
+            {/* Operations */}
             <strong>Operations</strong>
             <br />
             <div className="text-center">
